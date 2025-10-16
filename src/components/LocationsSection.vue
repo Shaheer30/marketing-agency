@@ -15,8 +15,6 @@
         <!-- Country Badge -->
         <span class="country-badge">{{ location.country }}</span>
 
-        <!-- City -->
-        <h2 class="city-title">{{ location.city }}</h2>
 
         <!-- Address -->
         <div class="info-item">
@@ -72,17 +70,15 @@ export default {
       locations: [
         {
           country: 'United States',
-          city: 'New York',
-          address: '123 Madison Avenue, Suite 500',
-          phone: '+1 (212) 555-0123',
-          email: 'contact@novareach.us',
+          address: '115 S Horner Blvd, Sanford, NC 27330, USA',
+          phone: '+1 (727)) 297-4842',
+          email: 'usadigitalagency@gmail.com',
         },
         {
           country: 'United Arab Emirates',
-          city: 'Dubai',
-          address: '456 Business Bay Tower, Level 15',
-          phone: '+971 (4) 555-0456',
-          email: 'contact@novareach.ae',
+          address: '15 - 1 4th St - Deira - Abu Dhabi - UAE',
+          phone: '+971 (5) 688-94637',
+          email: 'agencyuaemarketing@gmail.com',
         },
       ],
     };

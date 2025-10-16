@@ -25,63 +25,63 @@ export default {
     return {
       services: [
         {
-          title: "SEO",
-          desc: "Technical audits, content strategy, and link earning for sustainable growth.",
+          title: "Seo Agency",
+          desc: "Boost your online visibility with our expert SEO agency services. We create tailored content that ranks and drives targeted traffic. Let our SEO agency elevate your brand with proven strategies.",
           icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M10 3H3v7h7V3Zm11 0h-7v7h7V3ZM10 14H3v7h7v-7Zm4 0h7v7h-7v-7Z" stroke="currentColor" stroke-width="2"/></svg>`,
         },
         {
           title: "Local SEO",
-          desc: "Own the map pack with optimized listings, NAP consistency, and reviews.",
+          desc: "Get found by nearby customers with our expert Local SEO service. We optimize your business for maps, searches, and local directories. Grow foot traffic and leads with our trusted Local SEO service.",
           icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.33 7-11a7 7 0 1 0-14 0c0 5.67 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></svg>`,
         },
         {
           title: "GMB Creation",
-          desc: "Set up and verify your Google Business Profile for maximum local visibility.",
+          desc: "Boost your local presence with our GMB creation services for all niches. We set up and optimize your Google Business Profile for maximum visibility. Get discovered by local customers with expert GMB creation support.",
           icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 7h16l-2 10H6L4 7Z" stroke="currentColor" stroke-width="2"/><path d="M9 7V5a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="2"/></svg>`,
         },
         {
-          title: "Web Development",
-          desc: "Fast, accessible websites that convert — from landing pages to custom builds.",
+          title: "Web Development services & courses",
+          desc: "Unlock your digital potential with our Web Development services & courses. We build high-performing websites and teach you how to create your own. Whether you need a site or skills, our Web Development solutions deliver ",
           icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="m8 9-4 3 4 3M16 9l4 3-4 3" stroke="currentColor" stroke-width="2"/><path d="M10 19h4" stroke="currentColor" stroke-width="2"/></svg>`,
         },
         {
           title: "Graphic Designing",
-          desc: "Visual identities, ad creatives, and brand systems that stand out.",
+          desc: "Stand out with stunning visuals through our expert Graphic Designing services. We craft logos, social media posts, and branding that captures attention. Boost your brand identity with creative, professional Graphic Designing",
           icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 7h10v10H7z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>`,
         },
         {
           title: "Google & Meta Ads",
-          desc: "Performance creative, targeting, and optimization for profitable scale.",
+          desc: "Drive real results with our expert Google & Meta Ads services in the UAE and USA. We create high-converting ad campaigns tailored to your business goals. Grow your reach and ROI with targeted Google & Meta Ads strategies.",
           icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="6.5" cy="12" r="3.5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="12" r="3.5" stroke="currentColor" stroke-width="2"/><path d="M10 12c0-2 1.5-4 3.5-4s3.5 2 3.5 4-1.5 4-3.5 4S10 14 10 12Z" fill="currentColor" opacity="0.2"/><path d="M2 12h2M20 12h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
         },
         {
           title: "Content Writing",
-          desc: "Narratives that rank and convert — research-driven and brand-aligned.",
+          desc: "Engage your audience with high-quality, SEO-friendly Content Writing services. We craft blogs, website copy, and articles that drive traffic and conversions. Boost your brand’s voice with professional and impactful Content Writing.",
           icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 20h16M6 4h12v12H6z" stroke="currentColor" stroke-width="2"/><path d="M8 8h8M8 11h6" stroke="currentColor" stroke-width="2"/></svg>`,
         },
         {
           title: "Search Engine Marketing",
-          desc: "Increase visibility and drive traffic with targeted paid ads on search engines.",
+          desc: "Maximize your online visibility with powerful Search Engine Marketing strategies. We drive targeted traffic through optimized paid search campaigns. Grow faster and smarter with expert Search Engine Marketing services.",
           icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M16 16l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 11h6M8 8h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
         },
         {
           title: "Answer Engine Optimization",
-          desc: "Optimize for AI search tools like ChatGPT and Google SGE to appear in instant answers.",
+          desc: "Stay ahead with smart Answer Engine Optimization that targets voice and AI searches. We optimize your content to appear as direct answers across search platforms. Enhance visibility and credibility with expert Answer Engine Optimization services.",
           icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 4.97-3.58 9.36-7 10-3.42-.64-7-5.03-7-10V7l7-4z" stroke="currentColor" stroke-width="2"/><path d="M9 12h6M9 9h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
         },
         {
           title: "Geo-Targeted Marketing",
-          desc: "Reach customers by location with ads tailored to their area and intent.",
+          desc: "Reach the right audience at the right place with precision Geo-Targeted Marketing. We tailor campaigns by location to boost local engagement and conversions. Drive results with data-driven Geo-Targeted Marketing strategies.",
           icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 10a9 9 0 1 1 18 0c0 7-9 11-9 11S3 17 3 10Z" stroke="currentColor" stroke-width="2"/><path d="M12 7v3l2 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
         },
         {
           title: "SERP Optimization",
-          desc: "Improve your rankings and visibility across Google’s search results with strategic content and metadata.",
+          desc: "Boost your website’s ranking with expert SERP Optimization techniques. We enhance your content and metadata to dominate search engine results pages. Get more clicks and visibility through proven SERP Optimization strategies.",
           icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 8h10M7 12h6M7 16h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
         },
         {
           title: "GMB Ranking",
-          desc: "Boost your Google Business Profile to appear higher in local map results.",
+          desc: "Improve your local presence with our expert GMB Ranking services. We optimize your Google Business Profile to rank higher in local searches. Get more customers through enhanced visibility with professional GMB Ranking.",
           icon: `<svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Frame -->
             <rect x="6" y="8" width="52" height="40" rx="6" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -99,7 +99,7 @@ export default {
         },
         {
           title: "Guest Post Paid Service",
-          desc: "Publish sponsored articles on high-authority sites to build backlinks and brand trust.",
+          desc: "Boost your website authority with our reliable Guest Post Paid Service. We secure high-quality backlinks from trusted sites to improve your SEO. Grow your online presence through effective Guest Post Paid Service campaigns.",
           icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M7 8h10M7 12h7M7 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17 17l3 3M20 17l-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
         },
       ],
