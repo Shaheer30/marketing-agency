@@ -1,9 +1,8 @@
 <template>
   <header class="nav" role="navigation" aria-label="Primary">
     <div class="container nav-inner">
-      <a href="#home" class="brand" aria-label="Go to home">
-        <span class="logo-dot" />
-        <span class="brand-text">NovaReach</span>
+      <a href="/home" class="brand" aria-label="Go to home">
+        <img src="@/assets/logo.jpg" alt="NovaReach Logo" class="brand-logo" />
       </a>
 
       <button
@@ -13,11 +12,29 @@
         @click="open = !open"
       >
         <span class="sr-only">Toggle navigation</span>
-        <svg v-if="!open" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-          <path fill="currentColor" d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/>
+        <svg
+          v-if="!open"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"
+          />
         </svg>
-        <svg v-else width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-          <path fill="currentColor" d="M18.3 5.71L12 12.01 5.7 5.7 4.29 7.11l6.3 6.29-6.3 6.3 1.41 1.41 6.3-6.3 6.29 6.3 1.42-1.41-6.3-6.3 6.3-6.29z"/>
+        <svg
+          v-else
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M18.3 5.71L12 12.01 5.7 5.7 4.29 7.11l6.3 6.29-6.3 6.3 1.41 1.41 6.3-6.3 6.29 6.3 1.42-1.41-6.3-6.3 6.3-6.29z"
+          />
         </svg>
       </button>
 
@@ -32,16 +49,18 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 export default {
-  name: 'NavBar',
+  name: "NavBar",
   setup() {
-    const open = ref(false)
-    const close = () => { open.value = false }
-    return { open, close }
-  }
-}
+    const open = ref(false);
+    const close = () => {
+      open.value = false;
+    };
+    return { open, close };
+  },
+};
 </script>
 
 <style scoped>
@@ -49,34 +68,29 @@ export default {
   position: sticky;
   top: 0;
   z-index: 50;
-  background:
-    radial-gradient(1000px 300px at 80% -50%, rgba(34,211,238,0.18), transparent 60%),
-    rgba(11,18,32, 0.75);
+  background: radial-gradient(
+      1000px 300px at 80% -50%,
+      rgba(34, 211, 238, 0.18),
+      transparent 60%
+    ),
+    rgba(11, 18, 32, 0.75);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nav-inner {
-  height: 72px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-}
-
-.logo-dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--primary), #5eead4);
-  box-shadow: 0 0 0 4px rgba(34,211,238,0.15);
+.brand-logo {
+  width: 20%;
+  height: auto;
+  margin-right: 8px;
 }
 
 .brand-text {
@@ -101,7 +115,7 @@ export default {
   gap: 8px;
   padding: 12px;
   background: var(--surface);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
 }
 
@@ -111,9 +125,13 @@ export default {
   padding: 8px 10px;
   border-radius: 8px;
 }
-.links a:hover { background: rgba(255,255,255,0.06); }
+.links a:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
 
-.links.open { display: flex; }
+.links.open {
+  display: flex;
+}
 
 .cta-link {
   color: #05131a;
@@ -123,7 +141,9 @@ export default {
 }
 
 @media (min-width: 900px) {
-  .menu-btn { display: none; }
+  .menu-btn {
+    display: none;
+  }
   .links {
     position: static;
     display: flex !important;
@@ -133,12 +153,19 @@ export default {
     border: none;
     padding: 0;
   }
-  .links a { padding: 8px 10px; }
+  .links a {
+    padding: 8px 10px;
+  }
 }
 .sr-only {
   position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
-  white-space: nowrap; border: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 </style>

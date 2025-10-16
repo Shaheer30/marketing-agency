@@ -2,23 +2,31 @@
   <div class="container">
     <!-- Header -->
     <div class="header-section">
-      <h1 class="main-title">Visit Us Worldwide</h1>
+      <h1 class="main-title">Visit Us</h1>
       <p class="subtitle">Connect with our team across the globe</p>
     </div>
 
     <!-- Locations Grid -->
     <div class="locations-grid">
-      <div v-for="(location, index) in locations" :key="index" class="location-card">
+      <div
+        v-for="(location, index) in locations"
+        :key="index"
+        class="location-card"
+      >
         <!-- Left Accent Bar -->
         <div class="accent-bar"></div>
 
         <!-- Country Badge -->
         <span class="country-badge">{{ location.country }}</span>
 
-
         <!-- Address -->
         <div class="info-item">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
@@ -30,55 +38,76 @@
 
         <!-- Phone -->
         <div class="info-item">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+            ></path>
           </svg>
           <div>
             <p class="info-label">Phone</p>
-            <a :href="`tel:${location.phone}`" class="info-link">{{ location.phone }}</a>
+            <a :href="`tel:${location.phone}`" class="info-link">{{
+              location.phone
+            }}</a>
           </div>
         </div>
 
         <!-- Email -->
         <div class="info-item">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
             <rect x="2" y="4" width="20" height="16" rx="2"></rect>
             <path d="m22 6-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 6"></path>
           </svg>
           <div>
             <p class="info-label">Email</p>
-            <a :href="`mailto:${location.email}`" class="info-link">{{ location.email }}</a>
+            <a :href="`mailto:${location.email}`" class="info-link">{{
+              location.email
+            }}</a>
           </div>
         </div>
-
       </div>
     </div>
 
     <!-- CTA Button -->
     <div class="cta-section">
       <p class="cta-text">Ready to discuss your next project?</p>
-      <button class="cta-button">Schedule a Consultation</button>
+      <a
+        href="https://wa.me/971568894637?text=Hi%20I%20want%20to%20discuss%20a%20project"
+        class="cta-button"
+        target="_blank"
+      >
+        Schedule a Consultation
+      </a>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'BusinessLocations',
+  name: "BusinessLocations",
   data() {
     return {
       locations: [
         {
-          country: 'United States',
-          address: '115 S Horner Blvd, Sanford, NC 27330, USA',
-          phone: '+1 (727)) 297-4842',
-          email: 'usadigitalagency@gmail.com',
+          country: "United States",
+          address: "115 S Horner Blvd, Sanford, NC 27330, USA",
+          phone: "+1 (727)) 297-4842",
+          email: "usadigitalagency@gmail.com",
         },
         {
-          country: 'United Arab Emirates',
-          address: '15 - 1 4th St - Deira - Abu Dhabi - UAE',
-          phone: '+971 (5) 688-94637',
-          email: 'agencyuaemarketing@gmail.com',
+          country: "United Arab Emirates",
+          address: "15 - 1 4th St - Deira - Abu Dhabi - UAE",
+          phone: "+971 (5) 688-94637",
+          email: "agencyuaemarketing@gmail.com",
         },
       ],
     };
@@ -96,7 +125,8 @@ export default {
 .container {
   min-height: 100vh;
   padding: 60px 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 }
 
 .header-section {
@@ -110,14 +140,14 @@ export default {
 .main-title {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #ffffff; /* white */
   margin-bottom: 15px;
   letter-spacing: -1px;
 }
 
 .subtitle {
   font-size: 1.1rem;
-  color: #20d9d9;
+  color: #00732f; /* green */
   font-weight: 500;
 }
 
@@ -131,8 +161,12 @@ export default {
 
 .location-card {
   position: relative;
-  background: linear-gradient(135deg, rgba(15, 30, 50, 0.8) 0%, rgba(20, 50, 80, 0.6) 100%);
-  border: 1px solid rgba(32, 217, 217, 0.3);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(30, 30, 30, 0.8) 100%
+  );
+  border: 1px solid rgba(255, 0, 0, 0.3); /* red accent */
   border-radius: 16px;
   padding: 35px;
   backdrop-filter: blur(10px);
@@ -141,21 +175,26 @@ export default {
 }
 
 .location-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 50%, rgba(32, 217, 217, 0.1) 0%, transparent 50%);
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(0, 115, 47, 0.2) 0%,
+    transparent 50%
+  );
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
 }
 
 .location-card:hover {
-  border-color: rgba(32, 217, 217, 0.8);
-  box-shadow: 0 0 30px rgba(32, 217, 217, 0.2), inset 0 0 30px rgba(32, 217, 217, 0.05);
+  border-color: rgba(255, 0, 0, 0.8); /* stronger red on hover */
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.3),
+    inset 0 0 30px rgba(0, 115, 47, 0.1);
   transform: translateY(-5px);
 }
 
@@ -169,21 +208,21 @@ export default {
   left: 0;
   width: 4px;
   height: 50px;
-  background: linear-gradient(180deg, #20d9d9 0%, transparent 100%);
+  background: linear-gradient(180deg, #ff0000 0%, transparent 100%); /* red bar */
   border-radius: 0 4px 4px 0;
 }
 
 .country-badge {
   display: inline-block;
-  background: rgba(32, 217, 217, 0.15);
-  color: #20d9d9;
+  background: rgba(0, 115, 47, 0.2);
+  color: #00732f;
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border: 1px solid rgba(32, 217, 217, 0.4);
+  border: 1px solid rgba(0, 115, 47, 0.4);
   margin-bottom: 20px;
 }
 
@@ -207,13 +246,13 @@ export default {
 .info-item.timezone-item {
   margin-bottom: 0;
   padding-top: 20px;
-  border-top: 1px solid rgba(32, 217, 217, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .icon {
   width: 22px;
   height: 22px;
-  color: #20d9d9;
+  color: #ff0000; /* red icons */
   flex-shrink: 0;
   margin-top: 2px;
   stroke-width: 2;
@@ -221,7 +260,7 @@ export default {
 
 .info-label {
   font-size: 0.8rem;
-  color: #8899aa;
+  color: #cccccc; /* muted grey */
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 600;
@@ -237,7 +276,7 @@ export default {
 
 .info-link {
   font-size: 0.95rem;
-  color: #20d9d9;
+  color: #00732f; /* green links */
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -245,7 +284,7 @@ export default {
 }
 
 .info-link:hover {
-  color: #4dffff;
+  color: #ff0000; /* red hover */
 }
 
 .cta-section {
@@ -254,13 +293,13 @@ export default {
 
 .cta-text {
   font-size: 1rem;
-  color: #8899aa;
+  color: #cccccc;
   margin-bottom: 15px;
 }
 
 .cta-button {
-  background: linear-gradient(135deg, #20d9d9 0%, #1ab8b8 100%);
-  color: #0a1628;
+  background: linear-gradient(135deg, #00732f 0%, #ff0000 100%);
+  color: #ffffff;
   border: none;
   padding: 12px 35px;
   border-radius: 25px;
@@ -268,15 +307,15 @@ export default {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(32, 217, 217, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(32, 217, 217, 0.4);
-  background: linear-gradient(135deg, #4dffff 0%, #20d9d9 100%);
+  box-shadow: 0 8px 25px rgba(0, 115, 47, 0.4);
+  background: linear-gradient(135deg, #ff0000 0%, #00732f 100%);
 }
 
 .cta-button:active {

@@ -46,8 +46,9 @@ export default { name: 'HeroSection' }
 <style scoped>
 .hero {
   background:
-    radial-gradient(600px 300px at 85% 10%, rgba(34,211,238,0.15), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    radial-gradient(600px 300px at 85% 10%, rgba(0, 115, 47, 0.15), transparent 60%),
+linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0))
+
 }
 .hero-inner {
   display: grid;

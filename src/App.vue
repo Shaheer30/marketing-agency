@@ -61,12 +61,12 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 :root {
-  /* 5-color palette */
-  --bg: #0b1220;         /* dark background */
-  --surface: #111827;    /* dark surface */
-  --text: #e5e7eb;       /* light text */
-  --muted: #94a3b8;      /* muted text */
-  --primary: #22d3ee;    /* cyan accent */
+  /* UAE Flag Colors */
+  --bg: #00732f;       /* green */
+  --surface: #000000;  /* black */
+  --text: #ffffff;     /* white */
+  --muted: #cccccc;    /* light grey */
+  --primary: #ff0000;  /* red */
   --radius: 12px;
 }
 
