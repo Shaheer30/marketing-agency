@@ -2,7 +2,7 @@
   <header class="nav" role="navigation" aria-label="Primary">
     <div class="container nav-inner">
       <a href="/home" class="brand" aria-label="Go to home">
-        <img src="@/assets/logo.jpg" alt="NovaReach Logo" class="brand-logo" />
+        <img src="@/assets/logo.png" alt="NovaReach Logo" class="brand-logo" />
       </a>
 
       <button
@@ -42,7 +42,7 @@
         <a href="#about" @click="close">About</a>
         <a href="#services" @click="close">Services</a>
         <a href="#portfolio" @click="close">Portfolio</a>
-        <a href="#contact" @click="close" class="cta-link">Contact</a>
+        <a href="#contact" @click="close" class="btn-primary">Contact</a>
       </nav>
     </div>
   </header>
@@ -68,12 +68,7 @@ export default {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: radial-gradient(
-      1000px 300px at 80% -50%,
-      rgba(34, 211, 238, 0.18),
-      transparent 60%
-    ),
-    rgba(11, 18, 32, 0.75);
+  background: linear-gradient(rgba(0, 115, 47, 0.75), rgba(0, 115, 47, 0.75));
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -109,12 +104,12 @@ export default {
 .links {
   position: absolute;
   right: 16px;
-  top: 72px;
+  top: 100px;
   display: none;
   flex-direction: column;
   gap: 8px;
   padding: 12px;
-  background: var(--surface);
+  background: linear-gradient(rgba(0, 115, 47, 0.75), rgba(0, 115, 47, 0.75));
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
 }

@@ -62,11 +62,11 @@ export default {
 
 :root {
   /* UAE Flag Colors */
-  --bg: #00732f;       /* green */
-  --surface: #000000;  /* black */
-  --text: #ffffff;     /* white */
-  --muted: #cccccc;    /* light grey */
-  --primary: #ff0000;  /* red */
+  --bg: #fff;
+  --surface: #000000;
+  --text: #000;
+  --muted: #cccccc;
+  --primary: #ff0000;
   --radius: 12px;
 }
 
@@ -116,45 +116,55 @@ main {
 /* Utilities */
 .card {
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: var(--radius);
   backdrop-filter: blur(6px);
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  padding: 12px 20px;
-  font-weight: 600;
-  cursor: pointer;
-  border: 1px solid transparent;
-  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-}
-
 .btn-primary {
-  color: #05131a;
-  background: linear-gradient(135deg, var(--primary), #5eead4);
-  box-shadow: 0 8px 24px rgba(34, 211, 238, 0.25);
+    background: linear-gradient(135deg, #00732f 0%, #ff0000 100%);
+    color: #ffffff !important;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s 
+    cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 .btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(34, 211, 238, 0.32);
+    background: linear-gradient(135deg, #ff0000 0%, #00732f 100%);
+  box-shadow: 0 6px 20px rgba(0, 115, 47, 0.4);
+  transform: translateY(-3px);
 }
 
 .btn-outline {
-  color: var(--text);
-  border-color: rgba(255, 255, 255, 0.16);
   background: transparent;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+  padding: 12px 35px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
+
 .btn-outline:hover {
-  border-color: var(--primary);
-  box-shadow: inset 0 0 0 1px var(--primary);
+  background: linear-gradient(135deg, #ff0000 0%, #00732f 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
+  transform: translateY(-3px);
 }
 
 /* Responsive helpers */
 @media (min-width: 768px) {
-  .section { padding: 96px 24px; }
+  .section { padding: 0 24px 96px 24px;}
 }
 </style>

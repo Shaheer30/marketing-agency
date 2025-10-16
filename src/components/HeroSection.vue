@@ -10,8 +10,8 @@
           We help ambitious brands dominate search, scale paid media, and convert clicks into customers.
         </p>
         <div class="actions">
-          <a href="#contact" class="btn btn-primary">Get a Free Consultation</a>
-          <a href="#services" class="btn btn-outline">Explore Services</a>
+          <a href="#contact" class="btn-primary">Get a Free Consultation</a>
+          <a href="#services" class="btn-outline">Explore Services</a>
         </div>
         <ul class="trust">
           <li>Transparent Reporting</li>
@@ -77,7 +77,7 @@ linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0))
 }
 
 .subtitle {
-  color: var(--muted);
+  color: #00732f;
   max-width: 60ch;
 }
 
@@ -95,7 +95,7 @@ linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0))
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  color: var(--muted);
+  color: #00732f;
   font-size: 14px;
 }
 .trust li::before {
@@ -134,7 +134,7 @@ linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0))
 .panel h3 {
   margin: 0 0 6px 0;
   font-size: 14px;
-  color: var(--muted);
+  color: #00732f;
 }
 .kpi-up {
   color: var(--primary);

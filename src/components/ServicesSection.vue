@@ -118,7 +118,7 @@ export default {
   margin: 0 0 8px;
 }
 .section-head .muted {
-  color: var(--muted);
+  color: #00732f;
 }
 
 .grid {

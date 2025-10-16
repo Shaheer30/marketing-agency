@@ -35,7 +35,7 @@ export default { name: 'AboutSection' }
 }
 h2 { font-size: 28px; margin-bottom: 8px; }
 .lead { color: var(--text); font-weight: 500; }
-.muted { color: var(--muted); margin-top: 8px; }
+.muted { color: #00732f; margin-top: 8px; }
 .about-card {
   padding: 18px;
 }
@@ -54,5 +54,12 @@ h2 { font-size: 28px; margin-bottom: 8px; }
     align-items: start;
   }
   h2 { font-size: 34px; }
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(400px 200px at 65% 30%, rgba(34,211,238,0.2), transparent 60%);
+  filter: blur(18px);
 }
 </style>

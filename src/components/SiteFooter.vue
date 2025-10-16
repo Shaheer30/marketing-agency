@@ -2,10 +2,11 @@
   <footer class="footer">
     <div class="container foot-inner">
       <div class="left">
-        <span class="brand">NovaReach</span>
+        <a href="/home" class="brand" aria-label="Go to home">
+        <img src="@/assets/logo.png" alt="UAE Marketing Logo" class="brand-logo" />
+      </a>
         <span class="copyright"
-          >© {{ year }} NovaReach. All rights reserved.</span
-        >
+          >© {{ year }} UAE Marketing Agency. All rights reserved. A site by <a href="https://shaheer-siddiqi.vercel.app/" target="_blank">Shaheer Siddiqi</a></span>
       </div>
       <nav class="right" aria-label="Footer navigation">
         <a href="#about">About</a>
@@ -40,10 +41,15 @@ export default {
 }
 .foot-inner {
   display: flex;
-  flex-direction: column;
   gap: 12px;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
+}
+
+.brand-logo {
+  width: 20%;
+  height: auto;
+  margin-right: 8px;
 }
 .brand {
   font-weight: 700;
@@ -51,10 +57,11 @@ export default {
 }
 .left {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
-  color: var(--muted);
+  color: #00732f;
 }
 .right {
   display: flex;

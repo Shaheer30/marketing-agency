@@ -64,7 +64,7 @@ export default {
   margin-bottom: 22px;
 }
 .section-head h2 { font-size: 28px; margin: 0 0 8px; }
-.section-head .muted { color: var(--muted); }
+.section-head .muted { color: #00732f; }
 
 .grid {
   display: grid;

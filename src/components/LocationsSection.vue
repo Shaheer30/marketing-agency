@@ -123,7 +123,6 @@ export default {
 }
 
 .container {
-  min-height: 100vh;
   padding: 60px 20px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
@@ -140,7 +139,7 @@ export default {
 .main-title {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #ffffff; /* white */
+  color: #000; /* white */
   margin-bottom: 15px;
   letter-spacing: -1px;
 }
@@ -293,7 +292,7 @@ export default {
 
 .cta-text {
   font-size: 1rem;
-  color: #cccccc;
+  color: #000;
   margin-bottom: 15px;
 }
 
