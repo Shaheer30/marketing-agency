@@ -185,6 +185,26 @@
             <span>@uaemarketingg</span>
           </a>
           <a
+            href="https://www.linkedin.com/company/uae-mareting-agency/?viewAsMember=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit our LinkedIn"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8.5h4V24h-4V8.5Zm7.5 0h3.8v2.1h.05c.53-1 1.83-2.1 3.77-2.1 4.03 0 4.78 2.65 4.78 6.1V24h-4v-6.8c0-1.63-.03-3.72-2.27-3.72-2.27 0-2.62 1.77-2.62 3.6V24h-4V8.5Z"
+              />
+            </svg>
+            <span>@agencyuaemarketing</span>
+          </a>
+
+          <a
             href="https://www.pinterest.com/agencyuaemarketing/"
             target="_blank"
             rel="noopener noreferrer"

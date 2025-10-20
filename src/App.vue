@@ -23,12 +23,17 @@
         <LocationsSection />
       </section>
 
+      <section id="blog" class="section">
+        <BlogsSection />
+      </section>
+
       <section id="contact" class="section">
         <ContactSection />
       </section>
     </main>
 
     <SiteFooter />
+    <WhatsappFloating />
   </div>
 </template>
 
@@ -39,8 +44,10 @@ import AboutSection from './components/AboutSection.vue'
 import ServicesSection from './components/ServicesSection.vue'
 import PortfolioSection from './components/PortfolioSection.vue'
 import LocationsSection from './components/LocationsSection.vue'
+import BlogsSection from './components/BlogsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import SiteFooter from './components/SiteFooter.vue'
+import WhatsappFloating from './components/WhatsappFloating.vue'
 
 export default {
   name: 'App',
@@ -51,8 +58,10 @@ export default {
     ServicesSection,
     PortfolioSection,
     LocationsSection,
+    BlogsSection,
     ContactSection,
     SiteFooter,
+    WhatsappFloating,
   },
 }
 </script>
