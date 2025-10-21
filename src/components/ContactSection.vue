@@ -278,6 +278,15 @@
         </div>
       </aside>
     </div>
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3607.7022010470473!2d55.3114016!3d25.2806014!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85b1c5887b46d6a1%3A0x516d22a818b30cc3!2sUAE%20MARKETING%20AGENCY!5e0!3m2!1sen!2s!4v1761085025765!5m2!1sen!2s"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      >
+      </iframe>
+    </div>
   </div>
 </template>
 
@@ -560,5 +569,18 @@ button:disabled {
     grid-template-columns: 1.2fr 0.8fr;
     align-items: start;
   }
+}
+
+.map {
+  margin-top: 50px;
+    width: 100%;
+  height: 450px;
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 </style>
