@@ -214,7 +214,7 @@ export default {
 .country-badge {
   display: inline-block;
   background: rgba(0, 115, 47, 0.2);
-  color: #00732f;
+  color: #ff0000;
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.75rem;
