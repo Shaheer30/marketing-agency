@@ -17,104 +17,167 @@ useHead({
   ],
   script: [
     {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://uae-marketing-agency.vercel.app/#organization",
-          name: "UAE Marketing Agency",
-          url: "https://uae-marketing-agency.vercel.app/",
-          logo: "https://uae-marketing-agency.vercel.app/logo.png",
-          email: "agencyuaemarketing@gmail.com",
-          contactPoint: {
-            "@type": "ContactPoint",
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://uae-marketing-agency.vercel.app/#organization",
+            name: "UAE MARKETING AGENCY",
+            url: "https://uae-marketing-agency.vercel.app/",
+            logo: "https://uae-marketing-agency.vercel.app/favicon.ico",
+            email: "agencyuaemarketing@gmail.com",
             telephone: "+971568894637",
-            contactType: "customer service",
-            areaServed: "AE",
-            availableLanguage: ["English", "Arabic"],
+            sameAs: [
+              "https://www.facebook.com/profile.php?id=61579908015868",
+              "https://x.com/uaemarketingg",
+              "https://www.pinterest.com/agencyuaemarketing/",
+              "https://www.scoop.it/topic/uae-marketing-agency",
+              "https://medium.com/@agencyuaemarketing",
+            ],
+            description:
+              "UAE MARKETING AGENCY is a top-rated digital marketing company in Abu Dhabi offering expert SEO, PPC, social media marketing, and web development services designed to help UAE businesses grow online.",
           },
-          sameAs: [
-            "https://www.facebook.com/profile.php?id=61579908015868",
-            "https://x.com/uaemarketingg",
-            "https://www.pinterest.com/agencyuaemarketing/",
-            "https://www.scoop.it/topic/uae-marketing-agency",
-            "https://medium.com/@agencyuaemarketing",
-            "https://www.instagram.com/agencyuaemarketing/",
-          ],
-        },
-        {
-          "@type": "LocalBusiness",
-          "@id": "https://uae-marketing-agency.vercel.app/#localbusiness",
-          name: "UAE Marketing Agency",
-          image: "https://uae-marketing-agency.vercel.app/logo.png",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "15 - 1 4th St - Deira",
-            addressLocality: "Abu Dhabi",
-            addressRegion: "Abu Dhabi",
-            postalCode: "00000",
-            addressCountry: "AE",
-          },
-          telephone: "+971568894637",
-          email: "agencyuaemarketing@gmail.com",
-          url: "https://uae-marketing-agency.vercel.app/",
-          priceRange: "$$",
-          openingHours: "Mo-Sa 09:00-18:00",
-          geo: {
-            "@type": "GeoCoordinates",
-            latitude: "24.4539",
-            longitude: "54.3773",
-          },
-          areaServed: {
-            "@type": "Place",
-            name: ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Al Ain", "UAE"],
-          },
-          description:
-            "Boost your online presence with expert services: SEO, GMB ranking, website development, Meta Ads, Google Ads, content writing & more.",
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.9",
-            reviewCount: "27",
-          },
-        },
-        {
-          "@type": "FAQPage",
-          mainEntity: [
-            {
-              "@type": "Question",
-              name: "What services does UAE Marketing Agency offer?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "We offer SEO, Local SEO, Google My Business ranking, website development, Meta Ads, Google Ads, content writing, graphic design, and more.",
-              },
+          {
+            "@type": "AdvertisingAgency",
+            "@id": "https://uae-marketing-agency.vercel.app/#localbusiness",
+            name: "UAE MARKETING AGENCY",
+            image: "https://uae-marketing-agency.vercel.app/favicon.ico",
+            url: "https://uae-marketing-agency.vercel.app/",
+            priceRange: "$$",
+            telephone: "+971568894637",
+            email: "agencyuaemarketing@gmail.com",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "15 - 1 4th St - Deira",
+              addressLocality: "Abu Dhabi",
+              addressRegion: "Abu Dhabi",
+              postalCode: "",
+              addressCountry: "AE",
             },
-            {
-              "@type": "Question",
-              name: "Do you offer digital marketing services in Dubai and Abu Dhabi?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Yes, we serve all UAE regions including Dubai, Abu Dhabi, Sharjah, Ajman, and more with geo-targeted digital marketing solutions.",
-              },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 24.4539,
+              longitude: 54.3773,
             },
-            {
-              "@type": "Question",
-              name: "How can I contact UAE Marketing Agency?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "You can reach us at +971568894637 or email us at agencyuaemarketing@gmail.com. Visit us at Deira, Abu Dhabi.",
-              },
+            hasMap: "https://maps.app.goo.gl/pvMDiNtFc3mhb2eJA",
+            sameAs: [
+              "https://www.facebook.com/profile.php?id=61579908015868",
+              "https://x.com/uaemarketingg",
+              "https://www.pinterest.com/agencyuaemarketing/",
+              "https://www.scoop.it/topic/uae-marketing-agency",
+              "https://medium.com/@agencyuaemarketing",
+            ],
+            openingHours: "Mo-Su 08:00-22:00",
+            areaServed: {
+              "@type": "Place",
+              name: "United Arab Emirates",
             },
-            {
-              "@type": "Question",
-              name: "Do you help rank businesses on Google Maps?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Yes, we specialize in Google My Business (GMB) ranking and local SEO to improve your visibility in Maps and local search.",
+            service: [
+              {
+                "@type": "Service",
+                name: "Search Engine Optimization (SEO)",
+                description:
+                  "Advanced SEO services for UAE businesses to improve Google rankings and organic visibility.",
               },
+              {
+                "@type": "Service",
+                name: "Pay Per Click (PPC) Marketing",
+                description:
+                  "Expert Google Ads and paid media management focused on ROI-driven campaigns.",
+              },
+              {
+                "@type": "Service",
+                name: "Social Media Marketing",
+                description:
+                  "Full-service social media strategy, content creation, and growth campaigns for UAE brands.",
+              },
+              {
+                "@type": "Service",
+                name: "Content Marketing & Copywriting",
+                description:
+                  "Engaging, optimized content and brand storytelling that drives conversions.",
+              },
+              {
+                "@type": "Service",
+                name: "Website Design & Development",
+                description:
+                  "Modern, SEO-optimized web design solutions for high-performing UAE websites.",
+              },
+            ],
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+971568894637",
+              contactType: "Customer Service",
+              email: "agencyuaemarketing@gmail.com",
+              areaServed: "AE",
+              availableLanguage: ["English", "Arabic"],
             },
-          ],
-        },
-      ],
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://uae-marketing-agency.vercel.app/#website",
+            url: "https://uae-marketing-agency.vercel.app/",
+            name: "UAE MARKETING AGENCY",
+            publisher: {
+              "@id": "https://uae-marketing-agency.vercel.app/#organization",
+            },
+            potentialAction: {
+              "@type": "SearchAction",
+              target:
+                "https://uae-marketing-agency.vercel.app/?s={search_term_string}",
+              "query-input": "required name=search_term_string",
+            },
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://uae-marketing-agency.vercel.app/blog/blog/#faq",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Why is UAE MARKETING AGENCY the best digital marketing company in the UAE?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Because we combine proven digital strategies, expert teams, and local UAE insights to deliver measurable growth through SEO, PPC, and social media marketing.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you offer SEO and PPC services for UAE-based businesses?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes, we specialize in both local and global SEO as well as ROI-driven PPC management for UAE brands.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can you help with social media marketing in the UAE?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Absolutely! We manage social media campaigns for platforms like Instagram, Facebook, and X to grow engagement and brand visibility.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you provide web design and content creation?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes, our creative team delivers high-quality websites and optimized content designed for performance and SEO.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How can I contact UAE MARKETING AGENCY?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "You can contact us at +971568894637 or email agencyuaemarketing@gmail.com. Our office is located at 15 - 1 4th St - Deira - Abu Dhabi - United Arab Emirates.",
+                },
+              },
+            ],
+          },
+        ],
+      }),
     },
   ],
 });

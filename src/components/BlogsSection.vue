@@ -58,41 +58,6 @@ export default {
           img: '/images/blogs/professional-seo-service-search-engine-marketing.png',
           slug: 'ProfessionalSeoServiceSearchEngineMarketing'
         },
-        {
-          title: 'Local SEO Domination Playbook',
-          excerpt: 'Master the map pack with proven ranking frameworks.',
-          date: 'Oct 10, 2025',
-          category: 'Local SEO',
-          img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=600&auto=format&fit=crop'
-        },
-        {
-          title: 'Maximizing ROAS with Creative Testing',
-          excerpt: 'Deliver 4x+ returns through data-driven optimization.',
-          date: 'Oct 5, 2025',
-          category: 'Paid Media',
-          img: 'https://images.unsplash.com/photo-1460925895917-adf4e565db18?q=80&w=600&auto=format&fit=crop'
-        },
-        {
-          title: 'Understanding LTV-Based Targeting',
-          excerpt: 'Build sustainable growth with lifetime value metrics.',
-          date: 'Sep 28, 2025',
-          category: 'Strategy',
-          img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop'
-        },
-        {
-          title: 'Content Marketing Best Practices',
-          excerpt: 'Create content that ranks and converts consistently.',
-          date: 'Sep 20, 2025',
-          category: 'Content',
-          img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=600&auto=format&fit=crop'
-        },
-        {
-          title: 'Analytics Deep Dive: Data That Matters',
-          excerpt: 'Focus on metrics that actually drive business results.',
-          date: 'Sep 15, 2025',
-          category: 'Analytics',
-          img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop'
-        }
       ]
     }
   },
