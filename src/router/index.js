@@ -1,7 +1,7 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
-import BlogDetail from '@/views/BlogDetail.vue'
+import ProfessionalSeoServiceSearchEngineMarketing from '@/views/Blogs/ProfessionalSeoServiceSearchEngineMarketing.vue'
 
 const routes = [
   {
@@ -10,9 +10,9 @@ const routes = [
     component: Home,
   },
     {
-    path: '/blog/:slug',
-    name: 'BlogDetail',
-    component: BlogDetail,
+    path: '/Blog/:slug',
+    name: 'ProfessionalSeoServiceSearchEngineMarketing',
+    component: ProfessionalSeoServiceSearchEngineMarketing,
   },
 ]
 

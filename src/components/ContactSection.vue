@@ -108,8 +108,12 @@
                   v-model.trim="form.company"
                   type="text"
                   placeholder="Your Company"
+                  :class="{ 'has-error': errors.company }"
+                  @blur="validateField('company')"
+                  @input="clearError('company')"
                 />
               </div>
+              <span v-if="errors.company" class="error-message">{{ errors.company }}</span>
             </div>
           </div>
 
@@ -131,6 +135,7 @@
                   type="checkbox"
                   :value="service"
                   v-model="form.services"
+                  @change="validateField('services')"
                 />
                 <span class="checkmark">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
@@ -140,6 +145,7 @@
                 <span class="service-label">{{ service }}</span>
               </label>
             </div>
+            <span v-if="errors.services" class="error-message">{{ errors.services }}</span>
           </div>
 
           <div class="field">
@@ -330,6 +336,8 @@ export default {
         name: "",
         email: "",
         phone: "",
+        company: "",
+        services: "",
         message: "",
       },
       services: [
@@ -366,34 +374,75 @@ export default {
             this.errors.name = "Name is required";
           } else if (this.form.name.length < 2) {
             this.errors.name = "Name must be at least 2 characters";
+          } else if (this.form.name.length > 50) {
+            this.errors.name = "Name must not exceed 50 characters";
+          } else if (!/^[a-zA-Z\s'-]+$/.test(this.form.name)) {
+            this.errors.name = "Name can only contain letters, spaces, hyphens, and apostrophes";
+          } else {
+            this.errors.name = "";
           }
           break;
+
         case "email":
           if (!this.form.email) {
             this.errors.email = "Email is required";
           } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.form.email)) {
             this.errors.email = "Please enter a valid email address";
+          } else if (this.form.email.length > 100) {
+            this.errors.email = "Email must not exceed 100 characters";
+          } else {
+            this.errors.email = "";
           }
           break;
+
         case "phone":
           if (!this.form.phone) {
             this.errors.phone = "Phone number is required";
           } else if (!/^[+]?[\d\s\-()]+$/.test(this.form.phone)) {
             this.errors.phone = "Please enter a valid phone number";
+          } else if (this.form.phone.replace(/\D/g, "").length < 7) {
+            this.errors.phone = "Phone number must contain at least 7 digits";
+          } else if (this.form.phone.length > 20) {
+            this.errors.phone = "Phone number must not exceed 20 characters";
+          } else {
+            this.errors.phone = "";
           }
           break;
+
+        case "company":
+          if (this.form.company && this.form.company.length > 100) {
+            this.errors.company = "Company name must not exceed 100 characters";
+          } else {
+            this.errors.company = "";
+          }
+          break;
+
+        case "services":
+          if (this.form.services.length > 10) {
+            this.errors.services = "You can select a maximum of 10 services";
+          } else {
+            this.errors.services = "";
+          }
+          break;
+
         case "message":
           if (!this.form.message) {
             this.errors.message = "Message is required";
           } else if (this.form.message.length < 10) {
             this.errors.message = "Message must be at least 10 characters";
+          } else if (this.form.message.length > 1000) {
+            this.errors.message = "Message must not exceed 1000 characters";
+          } else {
+            this.errors.message = "";
           }
           break;
       }
     },
+
     clearError(field) {
       this.errors[field] = "";
     },
+
     showNotification(type, message) {
       this.notification = {
         show: true,
@@ -405,16 +454,23 @@ export default {
         this.notification.show = false;
       }, 5000);
     },
-    async sendEmail() {
-      // Validate all fields
+
+    validateAllFields() {
       this.validateField("name");
       this.validateField("email");
       this.validateField("phone");
+      this.validateField("company");
+      this.validateField("services");
       this.validateField("message");
 
-      // Check if there are any errors
-      if (Object.values(this.errors).some(error => error !== "")) {
-        this.showNotification("error", "Please fix the errors before submitting.");
+      return !Object.values(this.errors).some((error) => error !== "");
+    },
+
+    async sendEmail() {
+      const isValid = this.validateAllFields();
+
+      if (!isValid) {
+        this.showNotification("error", "Please fix all errors before submitting.");
         return;
       }
 
@@ -449,6 +505,7 @@ export default {
         this.isLoading = false;
       }
     },
+
     reset() {
       this.form = {
         name: "",
@@ -462,6 +519,8 @@ export default {
         name: "",
         email: "",
         phone: "",
+        company: "",
+        services: "",
         message: "",
       };
     },

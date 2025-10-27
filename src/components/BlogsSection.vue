@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <header class="section-head">
-      <h2>Latest Articles</h2>
+      <h2>Blogs/News Update</h2>
       <p class="muted">Insights and strategies to grow your business.</p>
     </header>
 
@@ -11,7 +11,6 @@
           <div class="blog-card">
             <div class="blog-image">
               <img :src="item.img" :alt="item.title" />
-              <span class="category">{{ item.category }}</span>
             </div>
             <div class="blog-content">
               <p class="date">{{ item.date }}</p>
@@ -53,12 +52,11 @@ export default {
       itemsPerView: 3,
       items: [
         {
-          title: 'How to Scale Your E-commerce SEO',
-          excerpt: 'Discover strategies for organic growth and qualified traffic.',
-          date: 'Oct 15, 2025',
-          category: 'SEO',
-          img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop',
-          slug: 'blog'
+          title: 'Professional SEO Service & Search Engine Marketing | Trusted SEO Agency',
+          excerpt: 'Enhance your online visibility with our professional SEO service and search engine marketing solutions from a trusted SEO agency',
+          date: 'Oct 28, 2025',
+          img: '/images/blogs/professional-seo-service-search-engine-marketing.png',
+          slug: 'ProfessionalSeoServiceSearchEngineMarketing'
         },
         {
           title: 'Local SEO Domination Playbook',
