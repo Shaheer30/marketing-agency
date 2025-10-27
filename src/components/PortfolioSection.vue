@@ -55,25 +55,25 @@ export default {
         {
           quote: 'They transformed our organic visibility in just 6 months. The results speak for themselves—over 140% increase in sessions.',
           name: 'Sarah Mitchell',
-          role: 'Marketing Director, TechCorp',
+          role: 'Client',
           img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop'
         },
         {
           quote: 'Best investment we made for our local business. We went from struggling to find customers to being booked solid.',
           name: 'James Rodriguez',
-          role: 'Owner, Local Services Co',
+          role: 'Client',
           img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop'
         },
         {
           quote: 'The paid media strategy was exceptional. Our ROAS jumped to 4.6x, and the team was incredibly responsive throughout.',
           name: 'Emma Thompson',
-          role: 'CEO, E-commerce Brand',
+          role: 'Client',
           img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop'
         },
         {
           quote: 'Professional, data-driven, and results-oriented. They understand not just what to do, but why it matters.',
           name: 'David Chen',
-          role: 'VP of Growth, SaaS Startup',
+          role: 'Client',
           img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop'
         }
       ]

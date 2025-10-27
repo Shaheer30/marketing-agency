@@ -17,7 +17,7 @@
               <p class="date">{{ item.date }}</p>
               <h3>{{ item.title }}</h3>
               <p class="excerpt">{{ item.excerpt }}</p>
-              <a href="#" class="read-more">Read →</a>
+              <router-link :to="`/blog/${item.slug}`" class="read-more">Read →</router-link>
             </div>
           </div>
         </article>
@@ -57,7 +57,8 @@ export default {
           excerpt: 'Discover strategies for organic growth and qualified traffic.',
           date: 'Oct 15, 2025',
           category: 'SEO',
-          img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop'
+          img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop',
+          slug: 'blog'
         },
         {
           title: 'Local SEO Domination Playbook',

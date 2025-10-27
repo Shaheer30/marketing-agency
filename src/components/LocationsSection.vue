@@ -105,7 +105,7 @@ export default {
         },
         {
           country: "United Arab Emirates",
-          address: "15 - 1 4th St - Deira - Abu Dhabi - UAE",
+          address: "15 - 14th St - Deira - Abu Dhabi - UAE",
           phone: "+971 (5) 688-94637",
           email: "agencyuaemarketing@gmail.com",
         },

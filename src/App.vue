@@ -1,37 +1,8 @@
+<!-- App.vue -->
 <template>
   <div>
     <NavBar />
-
-    <main>
-      <section id="home" class="section">
-        <HeroSection />
-      </section>
-
-      <section id="about" class="section">
-        <AboutSection />
-      </section>
-
-      <section id="services" class="section">
-        <ServicesSection />
-      </section>
-
-      <section id="portfolio" class="section">
-        <PortfolioSection />
-      </section>
-
-      <section id="locations" class="section">
-        <LocationsSection />
-      </section>
-
-      <section id="blog" class="section">
-        <BlogsSection />
-      </section>
-
-      <section id="contact" class="section">
-        <ContactSection />
-      </section>
-    </main>
-
+    <router-view />
     <SiteFooter />
     <WhatsappFloating />
   </div>
@@ -39,13 +10,6 @@
 
 <script>
 import NavBar from './components/NavBar.vue'
-import HeroSection from './components/HeroSection.vue'
-import AboutSection from './components/AboutSection.vue'
-import ServicesSection from './components/ServicesSection.vue'
-import PortfolioSection from './components/PortfolioSection.vue'
-import LocationsSection from './components/LocationsSection.vue'
-import BlogsSection from './components/BlogsSection.vue'
-import ContactSection from './components/ContactSection.vue'
 import SiteFooter from './components/SiteFooter.vue'
 import WhatsappFloating from './components/WhatsappFloating.vue'
 
@@ -53,13 +17,6 @@ export default {
   name: 'App',
   components: {
     NavBar,
-    HeroSection,
-    AboutSection,
-    ServicesSection,
-    PortfolioSection,
-    LocationsSection,
-    BlogsSection,
-    ContactSection,
     SiteFooter,
     WhatsappFloating,
   },
@@ -67,7 +24,8 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap');
+
 
 :root {
   /* UAE Flag Colors */
@@ -114,6 +72,8 @@ main {
 
 .section {
   padding: 72px 16px;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
@@ -139,16 +99,16 @@ main {
     font-size: 0.95rem;
     font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s 
-    cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
+
 .btn-primary:hover {
     background: linear-gradient(135deg, #ff0000 0%, #00732f 100%);
-  box-shadow: 0 6px 20px rgba(0, 115, 47, 0.4);
-  transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 115, 47, 0.4);
+    transform: translateY(-3px);
 }
 
 .btn-outline {
@@ -174,6 +134,6 @@ main {
 
 /* Responsive helpers */
 @media (min-width: 768px) {
-  .section { padding: 0 24px 96px 24px;}
+  .section { padding: 0 24px 96px 24px; }
 }
 </style>
