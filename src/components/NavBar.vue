@@ -1,166 +1,165 @@
-<template>
-  <header class="nav" role="navigation" aria-label="Primary">
-    <div class="container nav-inner">
-      <a href="/home" class="brand" aria-label="Go to home">
-        <img src="@/assets/logo.png" alt="NovaReach Logo" class="brand-logo" />
-      </a>
+<script setup>
+import { useRoute } from 'vue-router'
+import { computed, ref } from 'vue'
 
-      <button
-        class="menu-btn"
-        :aria-expanded="open ? 'true' : 'false'"
-        aria-controls="nav-menu"
-        @click="open = !open"
-      >
-        <span class="sr-only">Toggle navigation</span>
-        <svg
-          v-if="!open"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"
-          />
-        </svg>
-        <svg
-          v-else
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            d="M18.3 5.71L12 12.01 5.7 5.7 4.29 7.11l6.3 6.29-6.3 6.3 1.41 1.41 6.3-6.3 6.29 6.3 1.42-1.41-6.3-6.3 6.3-6.29z"
-          />
-        </svg>
-      </button>
+const route = useRoute()
+const activeRoute = computed(() => route.path)
+const mobileMenuOpen = ref(false)
 
-      <nav :class="['links', { open }]" id="nav-menu">
-        <a href="#about" @click="close">About</a>
-        <a href="#services" @click="close">Services</a>
-        <a href="#portfolio" @click="close">Portfolio</a>
-        <a href="#contact" @click="close" class="btn-primary">Contact</a>
-      </nav>
-    </div>
-  </header>
-</template>
-
-<script>
-import { ref } from "vue";
-
-export default {
-  name: "NavBar",
-  setup() {
-    const open = ref(false);
-    const close = () => {
-      open.value = false;
-    };
-    return { open, close };
-  },
-};
+const closeMobileMenu = () => {
+  mobileMenuOpen.value = false
+}
 </script>
 
+<template>
+  <nav class="navbar">
+    <div class="container navbar-content">
+      <router-link to="/" class="logo" @click="closeMobileMenu">
+        <img src="/logo.png" alt="uae marketing agency logo" class="logo-img" />
+      </router-link>
+
+      <!-- Hamburger Toggle Button -->
+      <button class="hamburger" @click="mobileMenuOpen = !mobileMenuOpen" :class="{ active: mobileMenuOpen }">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Desktop Menu -->
+      <ul class="nav-links" :class="{ mobile: mobileMenuOpen }">
+        <li><router-link to="/" :class="{ active: activeRoute === '/' }" @click="closeMobileMenu">Home</router-link></li>
+        <li><router-link to="/about" :class="{ active: activeRoute === '/about' }" @click="closeMobileMenu">About</router-link></li>
+        <li><router-link to="/services" :class="{ active: activeRoute === '/services' }" @click="closeMobileMenu">Services</router-link></li>
+        <!-- <li><router-link to="/blogs" :class="{ active: activeRoute === '/blogs' }" @click="closeMobileMenu">Blogs</router-link></li> -->
+        <li><router-link to="/contact" :class="{ active: activeRoute === '/contact' }" @click="closeMobileMenu">Contact</router-link></li>
+      </ul>
+    </div>
+  </nav>
+</template>
+
 <style scoped>
-.nav {
+.navbar {
+  background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-green) 100%);
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 50;
-  background: linear-gradient(rgba(0, 115, 47, 0.75), rgba(0, 115, 47, 0.75));
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 100;
 }
 
-.nav-inner {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  height: auto;
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-white);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 0.5rem;
 }
 
-.brand-logo {
-  width: 20%;
-  height: auto;
-  margin-right: 8px;
+.logo-img {
+  width: 15%;
 }
 
-.brand-text {
-  font-size: 18px;
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
 }
 
-.menu-btn {
-  background: transparent;
-  border: none;
-  color: var(--text);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.nav-links a {
+  color: var(--primary-white);
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.25rem;
+  transition: border-color 0.3s ease;
 }
 
-.links {
-  position: absolute;
-  right: 16px;
-  top: 100px;
+.nav-links a:hover,
+.nav-links a.active {
+  border-bottom-color: var(--primary-white);
+}
+
+.hamburger {
   display: none;
   flex-direction: column;
-  gap: 8px;
-  padding: 12px;
-  background: linear-gradient(rgba(0, 115, 47, 0.75), rgba(0, 115, 47, 0.75));
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius);
+  background: none;
+  cursor: pointer;
+  gap: 5px;
+  padding: 5px;
 }
 
-.links a {
-  color: var(--text);
-  opacity: 0.9;
-  padding: 8px 10px;
-  border-radius: 8px;
-}
-.links a:hover {
-  background: rgba(255, 255, 255, 0.06);
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-white);
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
-.links.open {
-  display: flex;
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
 }
 
-.cta-link {
-  color: #05131a;
-  background: linear-gradient(135deg, var(--primary), #5eead4);
-  border-radius: 999px;
-  padding: 8px 14px;
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
 }
 
-@media (min-width: 900px) {
-  .menu-btn {
-    display: none;
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+@media (max-width: 768px) {
+
+  .logo-img {
+  width: 20%;
+}
+
+  .navbar-content {
+    position: relative;
   }
-  .links {
-    position: static;
-    display: flex !important;
-    flex-direction: row;
-    gap: 20px;
-    background: transparent;
-    border: none;
-    padding: 0;
+
+  .hamburger {
+    display: flex;
   }
-  .links a {
-    padding: 8px 10px;
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-green) 100%);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
   }
-}
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+
+  .nav-links.mobile {
+    max-height: 300px;
+  }
+
+  .nav-links li {
+    padding: 0.75rem 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links a {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    border-bottom: none;
+    color: var(--primary-white);
+  }
+
 }
 </style>

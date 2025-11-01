@@ -1,139 +1,74 @@
-<!-- App.vue -->
 <template>
-  <div>
-    <NavBar />
-    <router-view />
-    <SiteFooter />
-    <WhatsappFloating />
+  <div class="app">
+    <Navbar />
+    <main class="main-content">
+      <router-view />
+    </main>
+    <Footer />
   </div>
 </template>
 
-<script>
-import NavBar from './components/NavBar.vue'
-import SiteFooter from './components/SiteFooter.vue'
-import WhatsappFloating from './components/WhatsappFloating.vue'
-
-export default {
-  name: 'App',
-  components: {
-    NavBar,
-    SiteFooter,
-    WhatsappFloating,
-  },
-}
+<script setup>
+import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap');
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 :root {
-  /* UAE Flag Colors */
-  --bg: #fff;
-  --surface: #000000;
-  --text: #000;
-  --muted: #cccccc;
-  --primary: #ff0000;
-  --radius: 12px;
-}
-
-* { box-sizing: border-box; }
-
-html, body, #app {
-  height: 100%;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* header height offset for anchor targets */
+  --primary-red: #CE1126;
+  --primary-green: #007A5E;
+  --primary-black: #000000;
+  --primary-white: #FFFFFF;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --bg-light: #F5F5F5;
+  --border-color: #DDDDDD;
 }
 
 body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--primary-white);
 }
 
-h1, h2, h3 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  line-height: 1.2;
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
 }
 
 a {
-  color: var(--primary);
   text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
 }
 
-main {
-  display: block;
-}
-
-.section {
-  padding: 72px 16px;
-  display: flex;
-  justify-content: center;
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 8px;
+  padding: 0 20px;
 }
 
-/* Utilities */
-.card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: var(--radius);
-  backdrop-filter: blur(6px);
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #00732f 0%, #ff0000 100%);
-    color: #ffffff !important;
-    border: none;
-    padding: 12px 35px;
-    border-radius: 25px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.btn-primary:hover {
-    background: linear-gradient(135deg, #ff0000 0%, #00732f 100%);
-    box-shadow: 0 6px 20px rgba(0, 115, 47, 0.4);
-    transform: translateY(-3px);
-}
-
-.btn-outline {
-  background: transparent;
-  color: #ff0000;
-  border: 2px solid #ff0000;
-  padding: 12px 35px;
-  border-radius: 25px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.btn-outline:hover {
-  background: linear-gradient(135deg, #ff0000 0%, #00732f 100%);
-  color: #ffffff;
-  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
-  transform: translateY(-3px);
-}
-
-/* Responsive helpers */
-@media (min-width: 768px) {
-  .section { padding: 0 24px 96px 24px; }
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 14px;
+  }
 }
 </style>
