@@ -2,11 +2,195 @@
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  document.title = 'About Us - UAE Marketing Agency'
+  // --- Title ---
+  document.title = 'About UAE Marketing Agency | Trusted Digital Marketing Experts in UAE'
+
+  // --- Meta Description ---
   const metaDescription = document.querySelector('meta[name="description"]')
   if (metaDescription) {
-    metaDescription.setAttribute('content', 'Learn about our agency mission, values, and expert team of digital marketers.')
+    metaDescription.setAttribute(
+      'content',
+      'Discover the story behind UAE Marketing Agency — a top-rated digital marketing company in UAE helping brands grow with SEO, social media, and paid advertising.'
+    )
+  } else {
+    const newMeta = document.createElement('meta')
+    newMeta.name = 'description'
+    newMeta.content = 'Discover the story behind UAE Marketing Agency — a top-rated digital marketing company in UAE helping brands grow with SEO, social media, and paid advertising.'
+    document.head.appendChild(newMeta)
   }
+
+  // --- Meta Keywords ---
+  const metaKeywords = document.querySelector('meta[name="keywords"]')
+  const keywordsContent = 'digital marketing agecy, digital marketing agency, digital marketing agency near me , seo agency, search engine marketing, seo optimization service, google my business, google business, google business profile, google business listing, google my business profile, mybusiness, web development, website development, website development company, website developers, web development company, web development services, meta ads manager, ads manager meta, ad manager meta'
+
+  if (metaKeywords) {
+    metaKeywords.setAttribute('content', keywordsContent)
+  } else {
+    const newKeywords = document.createElement('meta')
+    newKeywords.name = 'keywords'
+    newKeywords.content = keywordsContent
+    document.head.appendChild(newKeywords)
+  }
+
+  // --- JSON-LD Schema ---
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://uae-marketing-agency.vercel.app/about#webpage",
+        "url": "https://uae-marketing-agency.vercel.app/about",
+        "name": "About UAE Marketing Agency | Trusted Digital Marketing Experts in UAE",
+        "description": "Learn more about UAE Marketing Agency — a leading digital marketing company in UAE offering SEO, social media, and web development services to help brands grow online.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@id": "https://uae-marketing-agency.vercel.app/#organization"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://uae-marketing-agency.vercel.app/logo.png"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://uae-marketing-agency.vercel.app/#organization",
+        "name": "UAE Marketing Agency",
+        "url": "https://uae-marketing-agency.vercel.app/",
+        "description": "UAE Marketing Agency is a top-rated digital marketing agency in the UAE providing SEO, social media marketing, PPC, and web development services for businesses seeking growth.",
+        "image": "https://uae-marketing-agency.vercel.app/logo.png",
+        "logo": "https://uae-marketing-agency.vercel.app/logo.png",
+        "priceRange": "$200 - $1000",
+        "telephone": "+971568894637",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "url": "https://wa.me/971568894637",
+          "telephone": "+971568894637",
+          "availableLanguage": ["English", "Arabic"]
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Business Bay",
+          "addressLocality": "Dubai",
+          "addressRegion": "Dubai",
+          "postalCode": "00000",
+          "addressCountry": "AE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.2048,
+          "longitude": 55.2708
+        },
+        "hasMap": "https://maps.app.goo.gl/pvMDiNtFc3mhb2eJA",
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61579908015868",
+          "https://x.com/uaemarketingg",
+          "https://www.pinterest.com/agencyuaemarketing/",
+          "https://www.scoop.it/topic/uae-marketing-agency",
+          "https://medium.com/@agencyuaemarketing",
+          "https://clutch.co/profile/uae-marketing-agency?_gl=1*18f04ps*_gcl_au*NzE2MTAyNTA3LjE3NjE4NzA2NjIuMTI0MzkwMjkxLjE3NjE4NzIwNDkuMTc2MTg3MjMyNA..*FPAU*NzE2MTAyNTA3LjE3NjE4NzA2NjI.*_ga*NzYzNzk4NzE0LjE3NjE4NzA2NjI.*_ga_D0WFGX8X3V*czE3NjI1NDQyMDMkbzMkZzEkdDE3NjI1NDQyNjAkajMkbDAkaDE3MzQzNDE0MjQ."
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Haq Daad",
+          "jobTitle": "Founder & Digital Marketing Specialist"
+        },
+        "knowsAbout": [
+          "SEO optimization",
+          "Digital marketing",
+          "Search engine marketing",
+          "Social media marketing",
+          "Google Ads management",
+          "Content strategy",
+          "Web development"
+        ],
+        "areaServed": {
+          "@type": "Place",
+          "name": "United Arab Emirates"
+        },
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "reviewCount": "32"
+        },
+        "serviceType": [
+          "Digital Marketing",
+          "SEO Services",
+          "Social Media Marketing",
+          "Search Engine Marketing",
+          "Pay Per Click Advertising",
+          "Web Design and Development"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://uae-marketing-agency.vercel.app/about#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does a digital marketing agency do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A digital marketing agency helps businesses grow online through services like SEO, social media marketing, content creation, and paid advertising campaigns."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can SEO help my business in the UAE?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SEO improves your website’s visibility on Google, helping customers in the UAE find your business faster, increasing leads and sales organically."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the benefits of hiring a local digital marketing agency in UAE?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A local agency understands the UAE market, culture, and customer behavior—allowing for more effective targeting and better ROI from your campaigns."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does web development cost in UAE?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Web development in the UAE typically ranges between $200 and $1000, depending on website size, design complexity, and required functionalities."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I choose the best digital marketing agency in UAE?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Choose an agency with proven results, transparent pricing, verified reviews, and expertise in SEO, social media, and performance marketing—like UAE Marketing Agency."
+            }
+          }
+        ]
+      }
+    ]
+  }
+
+  const existingScript = document.querySelector('script[type="application/ld+json"]')
+  if (existingScript) existingScript.remove()
+
+  const script = document.createElement('script')
+  script.type = 'application/ld+json'
+  script.text = JSON.stringify(schema)
+  document.head.appendChild(script)
 })
 </script>
 
@@ -14,8 +198,8 @@ onMounted(() => {
   <div class="about-page">
     <section class="about-hero">
       <div class="container">
-        <h1>About UAE Marketing Agency</h1>
-        <p>We are a team of passionate digital marketers dedicated to transforming businesses in the UAE.</p>
+        <h1>About UAE Marketing Agency – Your Growth Partner in Digital Success</h1>
+        <p>At UAE Marketing Agency, we’re more than just a digital marketing company — we’re your dedicated partner in online growth. Founded by Haq Daad, our team of experts combines creativity, data-driven strategy, and the latest marketing technologies to help businesses across the UAE thrive. From SEO and social media management to paid advertising and content strategy, we build customized solutions that deliver measurable results.</p>
       </div>
     </section>
 

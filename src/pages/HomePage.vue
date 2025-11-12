@@ -2,11 +2,132 @@
 import { onMounted } from 'vue'
 
 onMounted(() => {
-    document.title = 'Home - UAE Marketing Agency'
+    // --- Title ---
+    document.title = 'Top Digital Marketing Agency Near You | UAE’s Best Marketing Experts'
+
+    // --- Meta Description ---
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-        metaDescription.setAttribute('content', 'Welcome to UAE Marketing Agency. Boost your digital presence with our expert marketing services.')
+        metaDescription.setAttribute(
+            'content',
+            'Grow your business with the leading digital marketing agency in UAE. Expert online marketing, SEO, and ads—trusted by brands searching for agencies near them.'
+        )
+    } else {
+        const newMeta = document.createElement('meta')
+        newMeta.name = 'description'
+        newMeta.content = 'Grow your business with the leading digital marketing agency in UAE. Expert online marketing, SEO, and ads—trusted by brands searching for agencies near them.'
+        document.head.appendChild(newMeta)
     }
+
+    // --- Meta Keywords ---
+    const metaKeywords = document.querySelector('meta[name="keywords"]')
+    const keywordsContent = 'digital marketing agecy, digital marketing agency near me, seo agency, search engine marketing, seo optimization service,  google my business, google business, google business profile, google business listing, google my business profile, mybusiness, web development, website development, website development company, website developers, web development company, web development services, meta ads manager, ads manager meta, ad manager meta'
+
+    if (metaKeywords) {
+        metaKeywords.setAttribute('content', keywordsContent)
+    } else {
+        const newKeywords = document.createElement('meta')
+        newKeywords.name = 'keywords'
+        newKeywords.content = keywordsContent
+        document.head.appendChild(newKeywords)
+    }
+
+    // --- JSON-LD Schema ---
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://uae-marketing-agency.vercel.app/#organization",
+        "name": "UAE Marketing Agency",
+        "url": "https://uae-marketing-agency.vercel.app/",
+        "description": "UAE Marketing Agency is a leading digital marketing agency in the UAE offering SEO, social media marketing, PPC, and web design services to help businesses grow online.",
+        "image": "https://uae-marketing-agency.vercel.app/logo.png",
+        "logo": "https://uae-marketing-agency.vercel.app/logo.png",
+        "priceRange": "$200 - $1000",
+        "telephone": "+971568894637",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "url": "https://wa.me/971568894637",
+            "telephone": "+971568894637",
+            "availableLanguage": ["English", "Arabic"]
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Business Bay",
+            "addressLocality": "Dubai",
+            "addressRegion": "Dubai",
+            "postalCode": "00000",
+            "addressCountry": "AE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 25.2048,
+            "longitude": 55.2708
+        },
+        "hasMap": "https://maps.app.goo.gl/pvMDiNtFc3mhb2eJA",
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61579908015868",
+            "https://x.com/uaemarketingg",
+            "https://www.pinterest.com/agencyuaemarketing/",
+            "https://www.scoop.it/topic/uae-marketing-agency",
+            "https://medium.com/@agencyuaemarketing",
+            "https://clutch.co/profile/uae-marketing-agency?_gl=1*18f04ps*_gcl_au*NzE2MTAyNTA3LjE3NjE4NzA2NjIuMTI0MzkwMjkxLjE3NjE4NzIwNDkuMTc2MTg3MjMyNA..*FPAU*NzE2MTAyNTA3LjE3NjE4NzA2NjI.*_ga*NzYzNzk4NzE0LjE3NjE4NzA2NjI.*_ga_D0WFGX8X3V*czE3NjI1NDQyMDMkbzMkZzEkdDE3NjI1NDQyNjAkajMkbDAkaDE3MzQzNDE0MjQ."
+        ],
+        "founder": {
+            "@type": "Person",
+            "name": "Haq Daad",
+            "jobTitle": "Founder & Digital Marketing Specialist",
+            "sameAs": [
+                "https://www.linkedin.com/in/haqdaad/"
+            ]
+        },
+        "knowsAbout": [
+            "SEO optimization",
+            "Digital marketing",
+            "Search engine marketing",
+            "Social media marketing",
+            "Google Ads management",
+            "Content strategy"
+        ],
+        "areaServed": {
+            "@type": "Place",
+            "name": "United Arab Emirates"
+        },
+        "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            ],
+            "opens": "09:00",
+            "closes": "18:00"
+        }],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "32"
+        },
+        "serviceType": [
+            "Digital Marketing",
+            "SEO Services",
+            "Social Media Marketing",
+            "Search Engine Marketing",
+            "Pay Per Click Advertising",
+            "Web Design and Development"
+        ]
+    }
+
+    const existingScript = document.querySelector('script[type="application/ld+json"]')
+    if (existingScript) existingScript.remove()
+
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify(schema)
+    document.head.appendChild(script)
 })
 
 const featuredServices = [
@@ -19,17 +140,16 @@ const featuredServices = [
     {
         id: 2,
         title: 'Web Development services & courses',
-        description: 'Unlock your digital potential with our Web Development services & courses. We build high-performing websites and teach you how to create your own. Whether you need a site or skills, our Web Development solutions deliver',
+        description: 'Unlock your digital potential with our Web Development services & courses. We build high-performing websites and teach you how to create your own. Whether you need a site or skills, our Web Development solutions deliver.',
         icon: 'fa-solid fa-code'
     },
     {
         id: 3,
         title: 'Graphic Designing',
-        description: 'Stand out with stunning visuals through our expert Graphic Designing services. We craft logos, social media posts, and branding that captures attention. Boost your brand identity with creative, professional Graphic Designing',
+        description: 'Stand out with stunning visuals through our expert Graphic Designing services. We craft logos, social media posts, and branding that captures attention. Boost your brand identity with creative, professional Graphic Designing.',
         icon: 'fa-brands fa-figma'
     }
 ]
-
 
 const featuredBlogs = [
     {
@@ -60,12 +180,13 @@ const formatDate = (date) => {
 }
 </script>
 
+
 <template>
     <div class="home-page">
         <section class="hero">
             <div class="hero-content">
-                <h1>Grow Faster with Data-Driven SEO and High-Conversion Ads</h1>
-                <p>We help ambitious brands dominate search, scale paid media, and convert clicks into customers.
+                <h1>Leading Digital Marketing Agency in UAE – Boost Your Online Success</h1>
+                <p>Partner with the UAE’s most trusted digital marketing agency to elevate your brand’s online presence. From SEO and social media to paid ads and content marketing, we deliver data-driven strategies that attract customers, increase engagement, and drive measurable growth.
                 </p>
                 <router-link to="/contact" class="cta-button">Get Started Today</router-link>
             </div>
@@ -134,8 +255,7 @@ const formatDate = (date) => {
                                 <span class="detail-label">
                                     <i class="fa-solid fa-phone-volume" style="color: #0b735b;"></i>
                                 </span>
-                                <a href="https://wa.me/971568894637"
-                                    target="_blank">+971 (5) 688-94637</a>
+                                <a href="https://wa.me/971568894637" target="_blank">+971 (5) 688-94637</a>
                             </p>
                             <p class="email">
                                 <span class="detail-label">

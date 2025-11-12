@@ -2,11 +2,203 @@
 import { onMounted } from 'vue'
 
 onMounted(() => {
-    document.title = 'Services - UAE Marketing Agency'
+    // --- Title ---
+    document.title = 'Digital Marketing, SEO, Web Development & Graphic Design Services in UAE'
+
+    // --- Meta Description ---
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-        metaDescription.setAttribute('content', 'Explore our comprehensive digital marketing services including SEO, social media, and content marketing.')
+        metaDescription.setAttribute(
+            'content',
+            'UAE Marketing Agency offers top digital marketing services, SEO optimization, Google Business Profile management, web and website development, graphic design, logo creation, and content writing. Boost your business online today!'
+        )
+    } else {
+        const newMeta = document.createElement('meta')
+        newMeta.name = 'description'
+        newMeta.content = 'UAE Marketing Agency offers top digital marketing services, SEO optimization, Google Business Profile management, web and website development, graphic design, logo creation, and content writing. Boost your business online today!'
+        document.head.appendChild(newMeta)
     }
+
+    // --- Meta Keywords ---
+    const metaKeywords = document.querySelector('meta[name="keywords"]')
+    const keywordsContent = 'digital marketing agecy, digital marketing agency, digital marketing agency near me, seo optimization service, seo agency, search engine marketing, google my business, google business, google business profile, google business listing, google my business profile, mybusiness, web development, website development, website development company, website developers, web development company, web development services, graphic designing, graphic design logo, graphic design companies, graphic, logo maker, business logo design, custom logo, article writer, content writer, ai writer, meta ads manager, ads manager meta, ad manager meta, google ads manager, ad manager, google ads manager account, gmb'
+
+    if (metaKeywords) {
+        metaKeywords.setAttribute('content', keywordsContent)
+    } else {
+        const newKeywords = document.createElement('meta')
+        newKeywords.name = 'keywords'
+        newKeywords.content = keywordsContent
+        document.head.appendChild(newKeywords)
+    }
+
+    // --- JSON-LD Schema ---
+    const schema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://uae-marketing-agency.vercel.app/services#webpage",
+                "url": "https://uae-marketing-agency.vercel.app/services",
+                "name": "Digital Marketing, SEO, Web Development & Graphic Design Services in UAE",
+                "description": "UAE Marketing Agency provides professional digital marketing, SEO optimization, web development, graphic design, content writing, and Google Business Profile services in UAE to grow your business online.",
+                "inLanguage": "en",
+                "isPartOf": {
+                    "@id": "https://uae-marketing-agency.vercel.app/#organization"
+                }
+            },
+            {
+                "@type": "LocalBusiness",
+                "@id": "https://uae-marketing-agency.vercel.app/#organization",
+                "name": "UAE Marketing Agency",
+                "url": "https://uae-marketing-agency.vercel.app/",
+                "description": "UAE Marketing Agency is a top digital marketing agency in Dubai offering SEO, Google Business Profile management, web development, graphic design, and content writing services for businesses seeking online growth.",
+                "image": "https://uae-marketing-agency.vercel.app/logo.png",
+                "logo": "https://uae-marketing-agency.vercel.app/logo.png",
+                "priceRange": "$200 - $1000",
+                "telephone": "+971568894637",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer support",
+                    "url": "https://wa.me/971568894637",
+                    "telephone": "+971568894637",
+                    "availableLanguage": ["English", "Arabic"]
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Business Bay",
+                    "addressLocality": "Dubai",
+                    "addressRegion": "Dubai",
+                    "postalCode": "00000",
+                    "addressCountry": "AE"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 25.2048,
+                    "longitude": 55.2708
+                },
+                "hasMap": "https://maps.app.goo.gl/pvMDiNtFc3mhb2eJA",
+                "sameAs": [
+                    "https://www.facebook.com/profile.php?id=61579908015868",
+                    "https://x.com/uaemarketingg",
+                    "https://www.pinterest.com/agencyuaemarketing/",
+                    "https://www.scoop.it/topic/uae-marketing-agency",
+                    "https://medium.com/@agencyuaemarketing",
+                    "https://clutch.co/profile/uae-marketing-agency"
+                ],
+                "founder": {
+                    "@type": "Person",
+                    "name": "Haq Daad",
+                    "jobTitle": "Founder & Digital Marketing Specialist"
+                },
+                "areaServed": {
+                    "@type": "Place",
+                    "name": "Dubai, UAE"
+                }
+            },
+            {
+                "@type": "Service",
+                "name": "Digital Marketing Agency Services",
+                "provider": { "@id": "https://uae-marketing-agency.vercel.app/#organization" },
+                "description": "Professional digital marketing services including strategy, PPC, Meta Ads management, Google Ads, SEO, and social media marketing to boost your business online.",
+                "serviceType": "Digital Marketing",
+                "areaServed": "UAE",
+                "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "200-1000" }
+            },
+            {
+                "@type": "Service",
+                "name": "SEO Optimization Service",
+                "provider": { "@id": "https://uae-marketing-agency.vercel.app/#organization" },
+                "description": "SEO optimization service to improve website ranking, organic traffic, and search engine visibility for businesses in UAE.",
+                "serviceType": "SEO",
+                "areaServed": "UAE",
+                "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "200-1000" }
+            },
+            {
+                "@type": "Service",
+                "name": "Google Business Profile / GMB Management",
+                "provider": { "@id": "https://uae-marketing-agency.vercel.app/#organization" },
+                "description": "Manage your Google Business Profile, listing, and reviews to improve local search visibility and customer engagement in UAE.",
+                "serviceType": "Google Business Profile",
+                "areaServed": "UAE",
+                "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "200-1000" }
+            },
+            {
+                "@type": "Service",
+                "name": "Web Development & Website Development",
+                "provider": { "@id": "https://uae-marketing-agency.vercel.app/#organization" },
+                "description": "Responsive and SEO-friendly web development and website development services for businesses, including custom web applications and professional websites.",
+                "serviceType": "Web Development",
+                "areaServed": "UAE",
+                "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "200-1000" }
+            },
+            {
+                "@type": "Service",
+                "name": "Graphic Design & Logo Design",
+                "provider": { "@id": "https://uae-marketing-agency.vercel.app/#organization" },
+                "description": "Creative graphic design services including custom logos, business branding, and professional graphic design solutions for UAE businesses.",
+                "serviceType": "Graphic Design",
+                "areaServed": "UAE",
+                "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "200-1000" }
+            },
+            {
+                "@type": "Service",
+                "name": "Content Writing & AI Article Writing",
+                "provider": { "@id": "https://uae-marketing-agency.vercel.app/#organization" },
+                "description": "Professional content writing services including AI-assisted article writing, SEO content, blog posts, and copywriting for online growth in UAE.",
+                "serviceType": "Content Writing",
+                "areaServed": "UAE",
+                "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "200-1000" }
+            },
+            {
+                "@type": "Service",
+                "name": "Meta Ads & Google Ads Management",
+                "provider": { "@id": "https://uae-marketing-agency.vercel.app/#organization" },
+                "description": "Manage your Meta Ads, Google Ads, and PPC campaigns effectively to maximize ROI and online visibility for UAE businesses.",
+                "serviceType": "Ads Management",
+                "areaServed": "UAE",
+                "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "200-1000" }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Which digital marketing services are offered by UAE Marketing Agency?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "We provide SEO, web development, graphic design, content writing, Google Business Profile management, Meta Ads, and Google Ads services in UAE." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How can UAE Marketing Agency improve my website traffic?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Through professional SEO optimization, content marketing, and Google Ads campaigns, we help businesses increase online visibility and traffic." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does UAE Marketing Agency provide local SEO for Dubai businesses?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Yes, we specialize in Google Business Profile management and local SEO strategies for Dubai and UAE businesses." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the cost of digital marketing services?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Our services range from $200 to $1000 depending on the scope of work, including SEO, web development, graphic design, and ads management." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Who is the founder of UAE Marketing Agency?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Haq Daad is the founder and digital marketing specialist leading the UAE Marketing Agency team." }
+                    }
+                ]
+            }
+        ]
+    }
+
+    const existingScript = document.querySelector('script[type="application/ld+json"]')
+    if (existingScript) existingScript.remove()
+
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify(schema)
+    document.head.appendChild(script)
 })
 
 const services = [
@@ -108,8 +300,8 @@ const services = [
     <div class="services-page">
         <section class="services-hero">
             <div class="container">
-                <h1>Our Services</h1>
-                <p>Comprehensive digital marketing solutions designed to grow your business in the UAE market.</p>
+                <h1>Professional Digital Marketing & Web Solutions in UAE</h1>
+                <p>Explore UAE Marketing Agency’s services including SEO optimization, search engine marketing, Google Business Profile management, web development, website development, graphic design, logo creation, and expert content writing. Grow your business online with our tailored digital solutions.</p>
             </div>
         </section>
 

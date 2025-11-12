@@ -3,14 +3,169 @@ import { ref, onMounted } from 'vue'
 import emailjs from "emailjs-com"
 
 onMounted(() => {
-    document.title = 'Contact Us - UAE Marketing Agency'
+    // --- Title ---
+    document.title = 'Contact UAE Marketing Agency | Leading Digital Marketing Agency in UAE'
+
+    // --- Meta Description ---
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-        metaDescription.setAttribute('content', 'Get in touch with our team. We are ready to help your business grow.')
+        metaDescription.setAttribute(
+            'content',
+            'Get in touch with UAE Marketing Agency, a top digital marketing agency in UAE. Reach us for SEO, social media marketing, web development, and online growth solutions.'
+        )
+    } else {
+        const newMeta = document.createElement('meta')
+        newMeta.name = 'description'
+        newMeta.content = 'Get in touch with UAE Marketing Agency, a top digital marketing agency in UAE. Reach us for SEO, social media marketing, web development, and online growth solutions.'
+        document.head.appendChild(newMeta)
     }
-    
-    // Initialize EmailJS
-    emailjs.init("D3ltS7qvCXrmxGUVo")
+
+    // --- Meta Keywords ---
+    const metaKeywords = document.querySelector('meta[name="keywords"]')
+    const keywordsContent = 'digital marketing agecy, digital marketing agency, digital marketing agency near me, seo optimization service, seo agency, search engine marketing, google my business, google business, google business profile, google business listing, google my business profile, mybusiness, web development, website development, website development company, website developers, web development company, web development services, graphic designing, graphic design logo, graphic design companies, graphic, logo maker, business logo design, custom logo, article writer, content writer, ai writer, meta ads manager, ads manager meta, ad manager meta, google ads manager, ad manager, google ads manager account, gmb'
+
+    if (metaKeywords) {
+        metaKeywords.setAttribute('content', keywordsContent)
+    } else {
+        const newKeywords = document.createElement('meta')
+        newKeywords.name = 'keywords'
+        newKeywords.content = keywordsContent
+        document.head.appendChild(newKeywords)
+    }
+
+    // --- JSON-LD Schema ---
+    const schema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://uae-marketing-agency.vercel.app/contact#webpage",
+                "url": "https://uae-marketing-agency.vercel.app/contact",
+                "name": "Contact UAE Marketing Agency | Dubai Digital Marketing Experts",
+                "description": "Get in touch with UAE Marketing Agency, a top digital marketing agency in Dubai. Reach us for SEO, social media marketing, PPC, and web development services.",
+                "inLanguage": "en",
+                "isPartOf": {
+                    "@id": "https://uae-marketing-agency.vercel.app/#organization"
+                }
+            },
+            {
+                "@type": "LocalBusiness",
+                "@id": "https://uae-marketing-agency.vercel.app/#organization",
+                "name": "UAE Marketing Agency",
+                "url": "https://uae-marketing-agency.vercel.app/",
+                "description": "UAE Marketing Agency is a trusted digital marketing agency in Dubai offering SEO, social media marketing, PPC, and web development services for businesses seeking growth.",
+                "image": "https://uae-marketing-agency.vercel.app/logo.png",
+                "logo": "https://uae-marketing-agency.vercel.app/logo.png",
+                "priceRange": "$200 - $1000",
+                "telephone": "+971568894637",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer support",
+                    "url": "https://wa.me/971568894637",
+                    "telephone": "+971568894637",
+                    "availableLanguage": ["English", "Arabic"]
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Business Bay",
+                    "addressLocality": "Dubai",
+                    "addressRegion": "Dubai",
+                    "postalCode": "00000",
+                    "addressCountry": "AE"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 25.2048,
+                    "longitude": 55.2708
+                },
+                "hasMap": "https://maps.app.goo.gl/pvMDiNtFc3mhb2eJA",
+                "sameAs": [
+                    "https://www.facebook.com/profile.php?id=61579908015868",
+                    "https://x.com/uaemarketingg",
+                    "https://www.pinterest.com/agencyuaemarketing/",
+                    "https://www.scoop.it/topic/uae-marketing-agency",
+                    "https://medium.com/@agencyuaemarketing",
+                    "https://clutch.co/profile/uae-marketing-agency"
+                ],
+                "founder": {
+                    "@type": "Person",
+                    "name": "Haq Daad",
+                    "jobTitle": "Founder & Digital Marketing Specialist"
+                },
+                "areaServed": {
+                    "@type": "Place",
+                    "name": "Dubai, UAE"
+                },
+                "openingHoursSpecification": [{
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday"
+                    ],
+                    "opens": "09:00",
+                    "closes": "18:00"
+                }]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://uae-marketing-agency.vercel.app/contact#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How do I contact UAE Marketing Agency in Dubai?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "You can contact UAE Marketing Agency via WhatsApp at +971568894637, email, or by filling out the contact form on our website."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What services does UAE Marketing Agency offer in Dubai?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We provide SEO, social media marketing, PPC, and web development services to help businesses grow their online presence in Dubai."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Where is UAE Marketing Agency located in Dubai?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Our office is located in Business Bay, Dubai. You can find us on Google Maps here: https://maps.app.goo.gl/pvMDiNtFc3mhb2eJA"
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How much does digital marketing cost in Dubai?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Our digital marketing services range between $200 and $1000 depending on the scope of work, including SEO, social media marketing, PPC, and web development."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Why choose UAE Marketing Agency for SEO and digital marketing in Dubai?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We are a trusted Dubai-based agency with proven results, transparent pricing, and expertise in SEO, social media, PPC, and web development to boost your business growth."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+
+    const existingScript = document.querySelector('script[type="application/ld+json"]')
+    if (existingScript) existingScript.remove()
+
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify(schema)
+    document.head.appendChild(script)
 })
 
 const form = ref({
@@ -138,8 +293,8 @@ const submitForm = async () => {
         email: form.value.email,
         phone: form.value.phone,
         company: form.value.company || 'Not specified',
-        services: form.value.services.length > 0 
-            ? form.value.services.join(', ') 
+        services: form.value.services.length > 0
+            ? form.value.services.join(', ')
             : 'None selected',
         message: form.value.message
     }
@@ -159,14 +314,14 @@ const submitForm = async () => {
         reset()
     } catch (error) {
         console.error('❌ Email sending failed:', error)
-        
+
         let errorMsg = 'Failed to send message. Please try again later.'
         if (error.status === 401) {
             errorMsg = 'Authentication failed. Check your Public Key.'
         } else if (error.status === 404) {
             errorMsg = 'Service ID or Template ID not found.'
         }
-        
+
         showNotification('error', errorMsg)
     } finally {
         isLoading.value = false
@@ -197,8 +352,8 @@ const reset = () => {
     <div class="contact-page">
         <section class="contact-hero">
             <div class="container">
-                <h1>Get In Touch</h1>
-                <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                <h1>Contact UAE Marketing Agency – Your Digital Growth Partner</h1>
+                <p>Reach out to UAE Marketing Agency for expert SEO, social media marketing, PPC, and web development services. Our Dubai-based team is ready to help your business grow online.</p>
             </div>
         </section>
 
@@ -218,7 +373,8 @@ const reset = () => {
                     <div class="info-card">
                         <div class="info-icon"><i class="fa-solid fa-phone-volume" style="color: #0b735b;"></i></div>
                         <h3>Phone</h3>
-                        <a href="https://wa.me/971568894637?text=Hi!%20I%20want%20to%20discuss%20a%20project" target="_blank">+971 (5) 688-96637</a>
+                        <a href="https://wa.me/971568894637?text=Hi!%20I%20want%20to%20discuss%20a%20project"
+                            target="_blank">+971 (5) 688-96637</a>
                     </div>
                 </div>
 
@@ -227,20 +383,14 @@ const reset = () => {
                         <div class="form-group">
                             <label for="name">Full Name <span class="required">*</span></label>
                             <div class="input-wrapper">
-                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="12" cy="7" r="4"/>
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                    <circle cx="12" cy="7" r="4" />
                                 </svg>
-                                <input
-                                    id="name"
-                                    v-model.trim="form.name"
-                                    type="text"
-                                    placeholder="Jane Doe"
-                                    :class="{ 'has-error': errors.name }"
-                                    @blur="validateField('name')"
-                                    @input="clearError('name')"
-                                    required
-                                />
+                                <input id="name" v-model.trim="form.name" type="text" placeholder="Jane Doe"
+                                    :class="{ 'has-error': errors.name }" @blur="validateField('name')"
+                                    @input="clearError('name')" required />
                             </div>
                             <span v-if="errors.name" class="error-message">{{ errors.name }}</span>
                         </div>
@@ -248,20 +398,14 @@ const reset = () => {
                         <div class="form-group">
                             <label for="email">Email Address <span class="required">*</span></label>
                             <div class="input-wrapper">
-                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="5" width="18" height="14" rx="2"/>
-                                    <path d="M3 7l9 6 9-6"/>
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                                    <path d="M3 7l9 6 9-6" />
                                 </svg>
-                                <input
-                                    id="email"
-                                    v-model.trim="form.email"
-                                    type="email"
-                                    placeholder="jane@company.com"
-                                    :class="{ 'has-error': errors.email }"
-                                    @blur="validateField('email')"
-                                    @input="clearError('email')"
-                                    required
-                                />
+                                <input id="email" v-model.trim="form.email" type="email" placeholder="jane@company.com"
+                                    :class="{ 'has-error': errors.email }" @blur="validateField('email')"
+                                    @input="clearError('email')" required />
                             </div>
                             <span v-if="errors.email" class="error-message">{{ errors.email }}</span>
                         </div>
@@ -271,19 +415,14 @@ const reset = () => {
                         <div class="form-group">
                             <label for="phone">Phone <span class="required">*</span></label>
                             <div class="input-wrapper">
-                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                                 </svg>
-                                <input
-                                    id="phone"
-                                    v-model.trim="form.phone"
-                                    type="tel"
-                                    placeholder="+971 (xxx) xxx-xxxx"
-                                    :class="{ 'has-error': errors.phone }"
-                                    @blur="validateField('phone')"
-                                    @input="clearError('phone')"
-                                    required
-                                />
+                                <input id="phone" v-model.trim="form.phone" type="tel" placeholder="+971 (xxx) xxx-xxxx"
+                                    :class="{ 'has-error': errors.phone }" @blur="validateField('phone')"
+                                    @input="clearError('phone')" required />
                             </div>
                             <span v-if="errors.phone" class="error-message">{{ errors.phone }}</span>
                         </div>
@@ -291,20 +430,14 @@ const reset = () => {
                         <div class="form-group">
                             <label for="company">Company <span class="required">*</span></label>
                             <div class="input-wrapper">
-                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                                    <path d="M9 3v18"/>
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                                    <path d="M9 3v18" />
                                 </svg>
-                                <input
-                                    id="company"
-                                    v-model.trim="form.company"
-                                    type="text"
-                                    placeholder="Your Company"
-                                    :class="{ 'has-error': errors.company }"
-                                    @blur="validateField('company')"
-                                    @input="clearError('company')"
-                                    required
-                                />
+                                <input id="company" v-model.trim="form.company" type="text" placeholder="Your Company"
+                                    :class="{ 'has-error': errors.company }" @blur="validateField('company')"
+                                    @input="clearError('company')" required />
                             </div>
                             <span v-if="errors.company" class="error-message">{{ errors.company }}</span>
                         </div>
@@ -318,18 +451,10 @@ const reset = () => {
                             </span>
                         </label>
                         <div class="services-grid">
-                            <label
-                                v-for="service in services"
-                                :key="service"
-                                class="service-checkbox"
-                                :class="{ 'selected': form.services.includes(service) }"
-                            >
-                                <input
-                                    type="checkbox"
-                                    :value="service"
-                                    v-model="form.services"
-                                    @change="clearError('services')"
-                                />
+                            <label v-for="service in services" :key="service" class="service-checkbox"
+                                :class="{ 'selected': form.services.includes(service) }">
+                                <input type="checkbox" :value="service" v-model="form.services"
+                                    @change="clearError('services')" />
                                 <span class="service-label">{{ service }}</span>
                             </label>
                         </div>
@@ -339,15 +464,10 @@ const reset = () => {
                     <div class="form-group">
                         <label for="message">Message <span class="required">*</span></label>
                         <div class="textarea-wrapper">
-                            <textarea
-                                id="message"
-                                v-model.trim="form.message"
-                                rows="5"
+                            <textarea id="message" v-model.trim="form.message" rows="5"
                                 placeholder="Tell us about your project goals and requirements..."
-                                :class="{ 'has-error': errors.message }"
-                                @blur="validateField('message')"
-                                @input="clearError('message')"
-                            ></textarea>
+                                :class="{ 'has-error': errors.message }" @blur="validateField('message')"
+                                @input="clearError('message')"></textarea>
                             <span class="char-count">{{ form.message.length }} / 1000</span>
                         </div>
                         <span v-if="errors.message" class="error-message">{{ errors.message }}</span>
@@ -356,15 +476,17 @@ const reset = () => {
                     <div class="form-actions">
                         <button type="submit" class="submit-button" :disabled="isLoading">
                             <span v-if="!isLoading">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="22" y1="2" x2="11" y2="13"/>
-                                    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13" />
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
                                 </svg>
                                 Send Message
                             </span>
                             <span v-else class="loading">
-                                <svg class="spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
+                                <svg class="spinner" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
                                 </svg>
                                 Sending...
                             </span>
@@ -623,8 +745,13 @@ const reset = () => {
 }
 
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .notification {
@@ -637,8 +764,15 @@ const reset = () => {
 }
 
 @keyframes slideIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .notification.success {
