@@ -4,14 +4,14 @@ import emailjs from "emailjs-com"
 
 onMounted(() => {
     // --- Title ---
-    document.title = 'Contact UAE Marketing Agency | Leading Digital Marketing Agency in UAE'
+    document.title = 'Contact Us | UAE Marketing Agency Support & Booking'
 
     // --- Meta Description ---
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
         metaDescription.setAttribute(
             'content',
-            'Get in touch with UAE Marketing Agency, a top digital marketing agency in UAE. Reach us for SEO, social media marketing, web development, and online growth solutions.'
+            'Get in touch with our UAE marketing agency for project inquiries, consultations, and digital marketing support. We&pos;re here to help your business grow.'
         )
     } else {
         const newMeta = document.createElement('meta')

@@ -3,14 +3,14 @@ import { onMounted } from 'vue'
 
 onMounted(() => {
   // --- Title ---
-  document.title = 'About UAE Marketing Agency | Trusted Digital Marketing Experts in UAE'
+  document.title = 'About Us | Leading UAE Marketing Agency for Digital Growth'
 
   // --- Meta Description ---
   const metaDescription = document.querySelector('meta[name="description"]')
   if (metaDescription) {
     metaDescription.setAttribute(
       'content',
-      'Discover the story behind UAE Marketing Agency — a top-rated digital marketing company in UAE helping brands grow with SEO, social media, and paid advertising.'
+      'Learn about our UAE marketing agency and how we deliver data-driven SEO, social media, and digital marketing solutions to help businesses grow across the UAE.'
     )
   } else {
     const newMeta = document.createElement('meta')

@@ -3,14 +3,14 @@ import { onMounted } from 'vue'
 
 onMounted(() => {
     // --- Title ---
-    document.title = 'Top Digital Marketing Agency Near You | UAE’s Best Marketing Experts'
+    document.title = 'Top UAE Marketing Agency – Digital Growth & Performance'
 
     // --- Meta Description ---
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
         metaDescription.setAttribute(
             'content',
-            'Grow your business with the leading digital marketing agency in UAE. Expert online marketing, SEO, and ads—trusted by brands searching for agencies near them.'
+            'Boost your business with a leading UAE marketing agency. We offer SEO, PPC, social media, and growth strategies tailored for the UAE market.'
         )
     } else {
         const newMeta = document.createElement('meta')
@@ -185,8 +185,8 @@ const formatDate = (date) => {
     <div class="home-page">
         <section class="hero">
             <div class="hero-content">
-                <h1>Leading Digital Marketing Agency in UAE – Boost Your Online Success</h1>
-                <p>Partner with the UAE’s most trusted digital marketing agency to elevate your brand’s online presence. From SEO and social media to paid ads and content marketing, we deliver data-driven strategies that attract customers, increase engagement, and drive measurable growth.
+                <h1>Leading UAE Marketing Agency for Digital Growth</h1>
+                <p>Our UAE marketing agency delivers high-impact SEO, social media, and performance marketing solutions designed to boost visibility, generate leads, and help businesses grow across the UAE.
                 </p>
                 <router-link to="/contact" class="cta-button">Get Started Today</router-link>
             </div>

@@ -3,14 +3,14 @@ import { onMounted } from 'vue'
 
 onMounted(() => {
     // --- Title ---
-    document.title = 'Digital Marketing, SEO, Web Development & Graphic Design Services in UAE'
+    document.title = 'Best SEO Agency Near Me| UAE Marketing Agency'
 
     // --- Meta Description ---
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
         metaDescription.setAttribute(
             'content',
-            'UAE Marketing Agency offers top digital marketing services, SEO optimization, Google Business Profile management, web and website development, graphic design, logo creation, and content writing. Boost your business online today!'
+            'We are the best seo agency working in overall in UAE , being partner with all leading businesses.'
         )
     } else {
         const newMeta = document.createElement('meta')
