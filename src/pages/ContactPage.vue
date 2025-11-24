@@ -353,7 +353,8 @@ const reset = () => {
         <section class="contact-hero">
             <div class="container">
                 <h1>Contact UAE Marketing Agency – Your Digital Growth Partner</h1>
-                <p>Reach out to UAE Marketing Agency for expert SEO, social media marketing, PPC, and web development services. Our Dubai-based team is ready to help your business grow online.</p>
+                <p>Reach out to UAE Marketing Agency for expert SEO, social media marketing, PPC, and web development
+                    services. Our Dubai-based team is ready to help your business grow online.</p>
             </div>
         </section>
 
@@ -788,35 +789,216 @@ const reset = () => {
 }
 
 @media (max-width: 768px) {
+    .contact-hero {
+        padding: 6rem 1.5rem;
+    }
+
     .contact-hero h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+
+    .contact-hero p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .contact-content {
+        padding: 2rem 1rem;
     }
 
     .contact-content .container {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .contact-info {
-        flex-direction: row;
+        flex-direction: column;
         gap: 1rem;
+        width: 100%;
     }
 
     .info-card {
         flex: 1;
         border-left: none;
         border-top: 4px solid var(--primary-red);
+        padding: 1.25rem;
+        text-align: center;
+        word-break: break-word;
+    }
+
+    .info-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .info-card p,
+    .info-card a {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .info-icon {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .contact-form {
+        padding: 1.25rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.65rem 0.65rem 0.65rem 2.25rem;
+        font-size: 1rem;
+        min-height: 44px;
+        /* Better touch target */
+    }
+
+    .input-icon {
+        left: 0.5rem;
+        width: 18px;
+        height: 18px;
     }
 
     .form-row {
         grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
     }
 
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .service-checkbox {
+        padding: 0.65rem 0.85rem;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .service-label {
+        font-size: 0.9rem;
+    }
+
+    .textarea-wrapper textarea {
+        min-height: 120px;
+        font-size: 1rem;
+        padding: 0.65rem 0.65rem 2rem 2.25rem !important;
+    }
+
+    .char-count {
+        font-size: 0.75rem;
+        bottom: 0.4rem;
+        right: 0.5rem;
+    }
+
+    .submit-button {
+        padding: 0.85rem;
+        font-size: 0.95rem;
+        min-height: 44px;
+        gap: 0.5rem;
+    }
+
+    .submit-button svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .notification {
+        margin-top: 1rem;
+        padding: 0.85rem;
+        font-size: 0.9rem;
+    }
+
+    /* Prevent text overflow in cards */
+    .info-card a {
+        display: block;
+        white-space: normal;
+    }
+}
+
+/* Extra small devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .contact-hero {
+        padding: 4rem 1rem;
+    }
+
+    .contact-hero h1 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .contact-hero p {
+        font-size: 0.85rem;
+    }
+
+    .contact-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .contact-content .container {
+        gap: 1.5rem;
+    }
+
+    .info-card {
+        padding: 1rem;
+    }
+
+    .info-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .info-card p,
+    .info-card a {
+        font-size: 0.8rem;
+    }
+
+    .info-icon {
+        font-size: 1.75rem;
     }
 
     .contact-form {
-        padding: 1.5rem;
+        padding: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.6rem 0.6rem 0.6rem 2rem;
+        font-size: 0.95rem;
+    }
+
+    .service-checkbox {
+        padding: 0.6rem 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .textarea-wrapper textarea {
+        min-height: 100px;
+        padding: 0.6rem 0.6rem 1.8rem 2rem !important;
+    }
+
+    .submit-button {
+        padding: 0.75rem;
+        font-size: 0.9rem;
     }
 }
 </style>
