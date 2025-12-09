@@ -1,17 +1,16 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import emailjs from "emailjs-com"
 
 onMounted(() => {
     // --- Title ---
-    document.title = 'Contact Us | UAE Marketing Agency Support & Booking'
+    document.title = 'Contact Us | UAE Marketing Agency Support & Booking'
 
     // --- Meta Description ---
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
         metaDescription.setAttribute(
             'content',
-            'Get in touch with our UAE marketing agency for project inquiries, consultations, and digital marketing support. We&pos;re here to help your business grow.'
+            'Get in touch with our UAE marketing agency for project inquiries, consultations, and digital marketing support. We&pos;re here to help your business grow.'
         )
     } else {
         const newMeta = document.createElement('meta')
@@ -271,7 +270,6 @@ const showNotification = (type, message) => {
 }
 
 const submitForm = async () => {
-    // Validate all fields
     validateField('name')
     validateField('email')
     validateField('phone')
@@ -279,7 +277,6 @@ const submitForm = async () => {
     validateField('message')
     validateField('services')
 
-    // Check if there are any errors
     if (Object.values(errors.value).some(error => error !== '')) {
         showNotification('error', 'Please fix the errors before submitting.')
         return
@@ -287,7 +284,6 @@ const submitForm = async () => {
 
     isLoading.value = true
 
-    // Prepare email data
     const emailData = {
         name: form.value.name,
         email: form.value.email,
@@ -300,13 +296,21 @@ const submitForm = async () => {
     }
 
     try {
-        const response = await emailjs.send(
-            "service_jawi0kf",
-            "template_y4q4ivh",
-            emailData
-        )
+        const response = await fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(emailData)
+        })
 
-        console.log('✅ Email sent successfully:', response)
+        const data = await response.json()
+
+        if (!response.ok) {
+            throw new Error(data.message || 'Failed to send email')
+        }
+
+        console.log('✅ Email sent successfully:', data)
         showNotification(
             'success',
             "Message sent successfully! We'll get back to you soon."
@@ -314,15 +318,7 @@ const submitForm = async () => {
         reset()
     } catch (error) {
         console.error('❌ Email sending failed:', error)
-
-        let errorMsg = 'Failed to send message. Please try again later.'
-        if (error.status === 401) {
-            errorMsg = 'Authentication failed. Check your Public Key.'
-        } else if (error.status === 404) {
-            errorMsg = 'Service ID or Template ID not found.'
-        }
-
-        showNotification('error', errorMsg)
+        showNotification('error', error.message || 'Failed to send message. Please try again later.')
     } finally {
         isLoading.value = false
     }
@@ -353,8 +349,7 @@ const reset = () => {
         <section class="contact-hero">
             <div class="container">
                 <h1>Contact UAE Marketing Agency – Your Digital Growth Partner</h1>
-                <p>Reach out to UAE Marketing Agency for expert SEO, social media marketing, PPC, and web development
-                    services. Our Dubai-based team is ready to help your business grow online.</p>
+                <p>Reach out to UAE Marketing Agency for expert SEO, social media marketing, PPC, and web development services. Our Dubai-based team is ready to help your business grow online.</p>
             </div>
         </section>
 
@@ -374,8 +369,7 @@ const reset = () => {
                     <div class="info-card">
                         <div class="info-icon"><i class="fa-solid fa-phone-volume" style="color: #0b735b;"></i></div>
                         <h3>Phone</h3>
-                        <a href="https://wa.me/971568894637?text=Hi!%20I%20want%20to%20discuss%20a%20project"
-                            target="_blank">+971 (5) 688-96637</a>
+                        <a href="https://wa.me/971568894637?text=Hi!%20I%20want%20to%20discuss%20a%20project" target="_blank">+971 (5) 688-96637</a>
                     </div>
                 </div>
 
@@ -384,14 +378,11 @@ const reset = () => {
                         <div class="form-group">
                             <label for="name">Full Name <span class="required">*</span></label>
                             <div class="input-wrapper">
-                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                                     <circle cx="12" cy="7" r="4" />
                                 </svg>
-                                <input id="name" v-model.trim="form.name" type="text" placeholder="Jane Doe"
-                                    :class="{ 'has-error': errors.name }" @blur="validateField('name')"
-                                    @input="clearError('name')" required />
+                                <input id="name" v-model.trim="form.name" type="text" placeholder="Jane Doe" :class="{ 'has-error': errors.name }" @blur="validateField('name')" @input="clearError('name')" required />
                             </div>
                             <span v-if="errors.name" class="error-message">{{ errors.name }}</span>
                         </div>
@@ -399,14 +390,11 @@ const reset = () => {
                         <div class="form-group">
                             <label for="email">Email Address <span class="required">*</span></label>
                             <div class="input-wrapper">
-                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <rect x="3" y="5" width="18" height="14" rx="2" />
                                     <path d="M3 7l9 6 9-6" />
                                 </svg>
-                                <input id="email" v-model.trim="form.email" type="email" placeholder="jane@company.com"
-                                    :class="{ 'has-error': errors.email }" @blur="validateField('email')"
-                                    @input="clearError('email')" required />
+                                <input id="email" v-model.trim="form.email" type="email" placeholder="jane@company.com" :class="{ 'has-error': errors.email }" @blur="validateField('email')" @input="clearError('email')" required />
                             </div>
                             <span v-if="errors.email" class="error-message">{{ errors.email }}</span>
                         </div>
@@ -416,14 +404,10 @@ const reset = () => {
                         <div class="form-group">
                             <label for="phone">Phone <span class="required">*</span></label>
                             <div class="input-wrapper">
-                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path
-                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                                 </svg>
-                                <input id="phone" v-model.trim="form.phone" type="tel" placeholder="+971 (xxx) xxx-xxxx"
-                                    :class="{ 'has-error': errors.phone }" @blur="validateField('phone')"
-                                    @input="clearError('phone')" required />
+                                <input id="phone" v-model.trim="form.phone" type="tel" placeholder="+971 (xxx) xxx-xxxx" :class="{ 'has-error': errors.phone }" @blur="validateField('phone')" @input="clearError('phone')" required />
                             </div>
                             <span v-if="errors.phone" class="error-message">{{ errors.phone }}</span>
                         </div>
@@ -431,31 +415,21 @@ const reset = () => {
                         <div class="form-group">
                             <label for="company">Company <span class="required">*</span></label>
                             <div class="input-wrapper">
-                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <rect x="3" y="3" width="18" height="18" rx="2" />
                                     <path d="M9 3v18" />
                                 </svg>
-                                <input id="company" v-model.trim="form.company" type="text" placeholder="Your Company"
-                                    :class="{ 'has-error': errors.company }" @blur="validateField('company')"
-                                    @input="clearError('company')" required />
+                                <input id="company" v-model.trim="form.company" type="text" placeholder="Your Company" :class="{ 'has-error': errors.company }" @blur="validateField('company')" @input="clearError('company')" required />
                             </div>
                             <span v-if="errors.company" class="error-message">{{ errors.company }}</span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label>
-                            Services Interested In <span class="required">*</span>
-                            <span class="service-count" v-if="form.services.length > 0">
-                                ({{ form.services.length }} selected)
-                            </span>
-                        </label>
+                        <label>Services Interested In <span class="required">*</span><span class="service-count" v-if="form.services.length > 0">({{ form.services.length }} selected)</span></label>
                         <div class="services-grid">
-                            <label v-for="service in services" :key="service" class="service-checkbox"
-                                :class="{ 'selected': form.services.includes(service) }">
-                                <input type="checkbox" :value="service" v-model="form.services"
-                                    @change="clearError('services')" />
+                            <label v-for="service in services" :key="service" class="service-checkbox" :class="{ 'selected': form.services.includes(service) }">
+                                <input type="checkbox" :value="service" v-model="form.services" @change="clearError('services')" />
                                 <span class="service-label">{{ service }}</span>
                             </label>
                         </div>
@@ -465,10 +439,7 @@ const reset = () => {
                     <div class="form-group">
                         <label for="message">Message <span class="required">*</span></label>
                         <div class="textarea-wrapper">
-                            <textarea id="message" v-model.trim="form.message" rows="5"
-                                placeholder="Tell us about your project goals and requirements..."
-                                :class="{ 'has-error': errors.message }" @blur="validateField('message')"
-                                @input="clearError('message')"></textarea>
+                            <textarea id="message" v-model.trim="form.message" rows="5" placeholder="Tell us about your project goals and requirements..." :class="{ 'has-error': errors.message }" @blur="validateField('message')" @input="clearError('message')"></textarea>
                             <span class="char-count">{{ form.message.length }} / 1000</span>
                         </div>
                         <span v-if="errors.message" class="error-message">{{ errors.message }}</span>
@@ -477,16 +448,14 @@ const reset = () => {
                     <div class="form-actions">
                         <button type="submit" class="submit-button" :disabled="isLoading">
                             <span v-if="!isLoading">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <line x1="22" y1="2" x2="11" y2="13" />
                                     <polygon points="22 2 15 22 11 13 2 9 22 2" />
                                 </svg>
                                 Send Message
                             </span>
                             <span v-else class="loading">
-                                <svg class="spinner" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2">
+                                <svg class="spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10" />
                                 </svg>
                                 Sending...
@@ -562,6 +531,15 @@ const reset = () => {
     color: var(--text-light);
 }
 
+.info-card a {
+    color: var(--primary-red);
+    text-decoration: none;
+}
+
+.info-card a:hover {
+    text-decoration: underline;
+}
+
 .contact-form {
     background: var(--primary-white);
     padding: 2rem;
@@ -596,6 +574,7 @@ const reset = () => {
     color: var(--primary-green);
     font-weight: 500;
     font-size: 0.85rem;
+    margin-left: 0.5rem;
 }
 
 .input-wrapper {
@@ -672,23 +651,6 @@ const reset = () => {
     background-color: rgba(11, 115, 91, 0.1);
 }
 
-.checkmark {
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--border-color);
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.service-checkbox.selected .checkmark {
-    background-color: var(--primary-green);
-    border-color: var(--primary-green);
-    color: white;
-}
-
 .service-label {
     font-size: 0.95rem;
     color: var(--primary-black);
@@ -749,7 +711,6 @@ const reset = () => {
     from {
         transform: rotate(0deg);
     }
-
     to {
         transform: rotate(360deg);
     }
@@ -769,7 +730,6 @@ const reset = () => {
         opacity: 0;
         transform: translateY(-10px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -865,7 +825,6 @@ const reset = () => {
         padding: 0.65rem 0.65rem 0.65rem 2.25rem;
         font-size: 1rem;
         min-height: 44px;
-        /* Better touch target */
     }
 
     .input-icon {
@@ -925,14 +884,12 @@ const reset = () => {
         font-size: 0.9rem;
     }
 
-    /* Prevent text overflow in cards */
     .info-card a {
         display: block;
         white-space: normal;
     }
 }
 
-/* Extra small devices (max-width: 480px) */
 @media (max-width: 480px) {
     .contact-hero {
         padding: 4rem 1rem;
@@ -1001,4 +958,5 @@ const reset = () => {
         font-size: 0.9rem;
     }
 }
+
 </style>
